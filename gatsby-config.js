@@ -46,6 +46,15 @@ module.exports = {
         path: `${__dirname}/src/content/tutorials/`,
       },
     },
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          blogs: require.resolve("./src/components/layouts/blog.js"),
+          articles: require.resolve("./src/components/layouts/article.js"),
+          tutorials: require.resolve("./src/components/layouts/tutorial.js"),
+        },
+      },
+    },
   ],
 }
