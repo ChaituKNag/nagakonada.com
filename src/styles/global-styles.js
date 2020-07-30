@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { fonts, mediaQueries } from "./variables"
+import { fonts, mediaQueries, colors } from "./variables"
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -13,6 +13,7 @@ html, body {
     font-weight: 300;
     font-size: 16px;
     line-height: 200%;
+    color: ${colors.base}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
     margin: .25em 0 .5em;
     line-height: 100%;
+    color: ${colors.primary}
 }
 
 h1 { font-size: 5rem;}

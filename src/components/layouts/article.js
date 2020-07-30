@@ -1,11 +1,11 @@
 import React from "react"
 import { ThemeWrapper } from "../../styles/theme"
-import ColumnContainer from "../styled/ColumnContainer"
+import StretchedColumn from "../styled/StretchedColumn"
 
 const ArticleLayout = ({ children }) => {
   return (
     <ThemeWrapper>
-      <ColumnContainer>{children}</ColumnContainer>
+      <StretchedColumn>{children}</StretchedColumn>
       <footer>this is the article layout</footer>
     </ThemeWrapper>
   )
