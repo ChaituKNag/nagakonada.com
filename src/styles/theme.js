@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import GlobalStyles from "./global-styles"
 import RootContainer from "../components/styled/RootContainer"
 
