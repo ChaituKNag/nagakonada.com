@@ -57,5 +57,16 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          { family: "Fira Sans", variants: [`400`] },
+          { family: "Montserrat Alternates", variants: [`800i`] },
+          { family: "Oxygen", variants: [`300`, `700`] },
+        ],
+      },
+    },
   ],
 }

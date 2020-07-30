@@ -1,12 +1,14 @@
 import React from "react"
+import { ThemeWrapper } from "../../styles/theme"
+import ColumnContainer from "../styled/ColumnContainer"
 
 const BlogLayout = ({ pageContext, children }) => {
   return (
-    <div>
+    <ThemeWrapper>
       <header>Title: {pageContext.frontmatter.title || ""}</header>
-      {children}
+      <ColumnContainer>{children}</ColumnContainer>
       <footer>this is the blog layout</footer>
-    </div>
+    </ThemeWrapper>
   )
 }
 
