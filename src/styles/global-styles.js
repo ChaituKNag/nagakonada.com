@@ -49,6 +49,12 @@ blockquote {
 blockquote p {
     margin: 0;
 }
+
+.line-numbers-rows {
+    padding: 1em 0 1em .5em;
+}
+
+
 `
 
 export default GlobalStyles

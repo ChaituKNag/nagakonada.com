@@ -55,6 +55,14 @@ module.exports = {
           articles: require.resolve("./src/components/layouts/article.js"),
           tutorials: require.resolve("./src/components/layouts/tutorial.js"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: false,
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-styled-components`,
