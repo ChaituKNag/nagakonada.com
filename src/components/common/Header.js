@@ -16,6 +16,7 @@ const HeaderTitle = styled.h4`
   cursor: pointer;
 
   font-size: 1.5rem;
+  color: ${colors.secondary};
 
   @media ${mediaQueries.desktopUp} {
     font-size: 2rem;
@@ -47,7 +48,7 @@ const Header = () => {
       <WideColumnContainer>
         <Row>
           <Column flex={1}>
-            <HeaderTitle onClick={goHome}>Naga Chaitanya Konada</HeaderTitle>
+            <HeaderTitle onClick={goHome}>Naga Konada</HeaderTitle>
             <HeaderCaption>I code UI. I React! </HeaderCaption>
           </Column>
           <Column width="200px">
