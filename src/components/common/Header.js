@@ -12,7 +12,7 @@ const HeaderWrapper = styled.header`
 `
 
 const HeaderTitle = styled.h4`
-  margin-bottom: 0;
+  margin: 0.25em 0 0;
   cursor: pointer;
 
   font-size: 1.5rem;

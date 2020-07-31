@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: ${fonts.heading};
     font-style: oblique;
     font-weight: 800;
-    margin: .25em 0 .5em;
+    margin: .5em 0 .5em;
     line-height: 100%;
     color: ${colors.primary}
 }
