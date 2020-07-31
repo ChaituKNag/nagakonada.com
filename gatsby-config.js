@@ -46,6 +46,7 @@ module.exports = {
         path: `${__dirname}/src/content/tutorials/`,
       },
     },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -60,6 +61,14 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               showLineNumbers: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: true,
+              tracedSVG: true,
             },
           },
         ],
