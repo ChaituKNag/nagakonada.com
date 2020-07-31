@@ -58,6 +58,15 @@ module.exports = {
         },
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-embed-video`,
+            options: {
+              width: "100%",
+              height: 400,
+              ratio: 1.77,
+              containerClass: "youtube-video-container",
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               showLineNumbers: false,
