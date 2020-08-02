@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import WideColumnContainer from "../styled/WideColumnContainer"
-import { fonts, colors, mediaQueries } from "../../styles/variables"
+import { fonts, colors } from "../../styles/variables"
 import Row from "../styled/Row"
 
 const FooterWrapper = styled.footer`
@@ -54,11 +54,21 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <WideColumnContainer>
-        <FooterHeading>Checkout my portfolio site 💼</FooterHeading>
+        <FooterHeading>
+          Checkout my portfolio site{" "}
+          <span role="img" aria-label="portfolio suitcase icon">
+            💼
+          </span>
+        </FooterHeading>
         <PortfolioLink href="https://thebestdeveloper.me" target="_blank">
           The Best Developer
         </PortfolioLink>
-        <FooterHeading>My social media links ✍️</FooterHeading>
+        <FooterHeading>
+          My social media links{" "}
+          <span role="img" aria-label="social post icon">
+            ✍️
+          </span>
+        </FooterHeading>
         <Row justify="flex-start" wrap="wrap">
           <SocialLink
             href="https://www.linkedin.com/in/nagachaitanyakonada/"

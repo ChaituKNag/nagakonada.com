@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import WideColumnContainer from "../styled/WideColumnContainer"
 import Row from "../styled/Row"
-import Column from "../styled/Column"
 import { fonts, colors, mediaQueries } from "../../styles/variables"
 import { Link, navigate } from "gatsby"
 
