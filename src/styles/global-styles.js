@@ -11,7 +11,7 @@ html, body {
     padding: 0;
     font-family: ${fonts.body};
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 200%;
     color: ${colors.base}
 }
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     color: ${colors.primary}
 }
 
-h1 { font-size: 4rem;}
+h1 { font-size: 3.3rem;}
 h2 { font-size: 2.5rem;}
 h3 { font-size: 2rem;}
 h4 { font-size: 1.75rem;}
