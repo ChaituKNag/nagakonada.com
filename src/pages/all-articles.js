@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../components/layouts/default"
+import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 
 const AllArticles = () => {
   return (
     <Layout>
-      <p>All articles will land here.</p>
+      <ItemsGridContainer />
     </Layout>
   )
 }

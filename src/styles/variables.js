@@ -5,11 +5,13 @@ export const fonts = {
 }
 
 export const widths = {
-  desktop: `750px`,
+  mobile: `500px`,
+  desktop: `769px`,
   largeDesktop: `850px`,
 }
 
 export const mediaQueries = {
+  mobileUp: `only screen and (min-width: ${widths.mobile})`,
   desktopUp: `only screen and (min-width: ${widths.desktop})`,
   largeDesktopUp: `only screen and (min-width: ${widths.largeDesktop})`,
 }
@@ -20,4 +22,5 @@ export const colors = {
   secondary: "#d81b60",
   light: "#eee",
   white: "white",
+  boxShadow: `rgba(0, 0, 0, 0.4)`,
 }
