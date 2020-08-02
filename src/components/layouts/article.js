@@ -2,6 +2,7 @@ import React from "react"
 import { ThemeWrapper } from "../../styles/theme"
 import Header from "../common/Header"
 import StretchedColumn from "../styled/StretchedColumn"
+import Footer from "../common/Footer"
 
 const ArticleLayout = ({ pageContext, children }) => {
   return (
@@ -13,7 +14,7 @@ const ArticleLayout = ({ pageContext, children }) => {
         ) : null}
         {children}
       </StretchedColumn>
-      <footer>this is the article layout</footer>
+      <Footer />
     </ThemeWrapper>
   )
 }

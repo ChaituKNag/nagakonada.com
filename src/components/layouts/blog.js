@@ -2,6 +2,7 @@ import React from "react"
 import { ThemeWrapper } from "../../styles/theme"
 import StretchedColumn from "../styled/StretchedColumn"
 import Header from "../common/Header"
+import Footer from "../common/Footer"
 
 const BlogLayout = ({ pageContext, children }) => {
   return (
@@ -13,7 +14,7 @@ const BlogLayout = ({ pageContext, children }) => {
         ) : null}
         {children}
       </StretchedColumn>
-      <footer>this is the blog layout</footer>
+      <Footer />
     </ThemeWrapper>
   )
 }
