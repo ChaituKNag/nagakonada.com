@@ -91,6 +91,7 @@ module.exports = {
           { family: "Fira Sans", variants: [`400`, `800`] },
           { family: "Montserrat Alternates", variants: [`800i`] },
           { family: "Oxygen", variants: [`300`, `700`] },
+          { family: "Satisfy", variants: [`400`] },
         ],
       },
     },

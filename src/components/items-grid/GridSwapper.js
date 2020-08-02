@@ -1,5 +1,5 @@
 import React from "react"
-import { widths, colors, fonts } from "../../styles/variables"
+import { colors, fonts } from "../../styles/variables"
 import styled from "styled-components"
 
 const SwapperContainer = styled.div`

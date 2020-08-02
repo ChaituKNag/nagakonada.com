@@ -1,5 +1,5 @@
 export const fonts = {
-  heading: `'Montserrat Alternates', sans-serif`,
+  heading: `'Satisfy', cursive`,
   body: `"Oxygen", sans-serif`,
   special: `'Fira Sans', sans-serif`,
 }
