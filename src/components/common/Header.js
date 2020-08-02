@@ -7,24 +7,54 @@ import { fonts, colors, mediaQueries } from "../../styles/variables"
 import { Link, navigate } from "gatsby"
 
 const HeaderWrapper = styled.header`
-  background-color: #eee;
+  background-color: ${colors.light};
   padding: 0 0.5rem;
+`
+
+const HeaderRow = styled.div`
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: column;
+  @media ${mediaQueries.largeDesktopUp} {
+    flex-direction: row;
+  }
+`
+
+const TitleSection = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media ${mediaQueries.largeDesktopUp} {
+    align-items: flex-start;
+  }
 `
 
 const HeaderTitle = styled.h4`
   margin: 0.25em 0 0;
   cursor: pointer;
 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: ${colors.secondary};
 
   @media ${mediaQueries.desktopUp} {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 `
 
 const HeaderCaption = styled.span`
   font-family: ${fonts.special};
+`
+
+const LinksSection = styled.div`
+  flex: 0;
+  flex-basis: 0;
+
+  @media ${mediaQueries.largeDesktopUp} {
+    flex-basis: 200px;
+  }
 `
 
 const HeaderLink = styled(Link)`
@@ -46,12 +76,12 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <WideColumnContainer>
-        <Row>
-          <Column flex={1}>
+        <HeaderRow>
+          <TitleSection>
             <HeaderTitle onClick={goHome}>Naga Konada</HeaderTitle>
             <HeaderCaption>I code UI. I React! </HeaderCaption>
-          </Column>
-          <Column width="200px">
+          </TitleSection>
+          <LinksSection>
             <nav>
               <Row justify="space-between">
                 <HeaderLink activeClassName="active" to="/all-blogs">
@@ -65,8 +95,8 @@ const Header = () => {
                 </HeaderLink>
               </Row>
             </nav>
-          </Column>
-        </Row>
+          </LinksSection>
+        </HeaderRow>
       </WideColumnContainer>
     </HeaderWrapper>
   )
