@@ -40,10 +40,19 @@ const GridWrapper = styled.section`
       : ""}
 `
 
-const ItemsGridContainer = ({ items }) => {
+const NoItemsSection = styled.div`
+  text-align: center;
+  padding: 5rem 0;
+`
+
+const ItemsGridContainer = ({ items, noItemsMessage }) => {
   const [selectedLayout, setSelectedLayout] = useState("grid")
   const handleLayoutChange = layout => () => setSelectedLayout(layout)
   const stacked = selectedLayout === "list"
+
+  if (items.length === 0) {
+    return <NoItemsSection>{noItemsMessage}</NoItemsSection>
+  }
   return (
     <Fragment>
       <GridSwapper onSelect={handleLayoutChange} selected={selectedLayout} />
