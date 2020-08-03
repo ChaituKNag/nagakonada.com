@@ -18,6 +18,7 @@ const HeaderRow = styled.div`
   @media ${mediaQueries.largeDesktopUp} {
     flex-direction: row;
   }
+  min-height: 75px;
 `
 
 const TitleSection = styled.div`
@@ -32,14 +33,14 @@ const TitleSection = styled.div`
 `
 
 const HeaderTitle = styled.h4`
-  margin: 0.25em 0 0;
+  margin: ${props => (props.home ? `0` : `0.25em 0 0`)};
   cursor: pointer;
 
-  font-size: 1.5rem;
+  font-size: ${props => (props.home ? "1.8rem" : "1.5rem")};
   color: ${colors.secondary};
 
   @media ${mediaQueries.desktopUp} {
-    font-size: 1.4rem;
+    font-size: ${props => (props.home ? "1.7rem" : "1.4rem")};
   }
 `
 
@@ -70,15 +71,17 @@ const HeaderLink = styled(Link)`
   }
 `
 
-const Header = () => {
+const Header = ({ home }) => {
   const goHome = () => navigate("/")
   return (
     <HeaderWrapper>
       <WideColumnContainer>
         <HeaderRow>
           <TitleSection>
-            <HeaderTitle onClick={goHome}>Naga Konada</HeaderTitle>
-            <HeaderCaption>I code UI. I React! </HeaderCaption>
+            <HeaderTitle home={home} onClick={goHome}>
+              Naga Konada
+            </HeaderTitle>
+            {!home ? <HeaderCaption>I code UI. I React! </HeaderCaption> : null}
           </TitleSection>
           <LinksSection>
             <nav>
