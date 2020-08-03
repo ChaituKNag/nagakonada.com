@@ -3,6 +3,7 @@ import styled from "styled-components"
 import WideColumnContainer from "../styled/WideColumnContainer"
 import { fonts, colors } from "../../styles/variables"
 import Row from "../styled/Row"
+import Anchor from "./Anchor"
 
 const FooterWrapper = styled.footer`
   background-color: ${colors.light};
@@ -13,32 +14,14 @@ const FooterHeading = styled.h6`
   margin-top: 2rem;
 `
 
-const PortfolioLink = styled.a`
-  font-family: ${fonts.body};
-  font-weight: 800;
-  color: ${colors.secondary};
-  text-decoration: none;
+const PortfolioLink = styled(Anchor)`
   padding: 0.25em 0;
-
-  &:hover,
-  &:focus,
-  &:active {
-    border-bottom: 5px solid ${colors.primary};
-  }
 `
 
-const SocialLink = styled.a`
-  color: ${props => props.color || colors.secondary};
-  font-family: ${fonts.body};
-  font-weight: 800;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  &:hover,
-  &:focus,
-  &:active {
-    border-bottom: 2px solid currentColor;
+const SocialLink = styled(Anchor)`
+  &::after {
+    height: 2px;
   }
-
   &:not(:last-child) {
     margin-right: 1em;
   }
@@ -60,7 +43,12 @@ const Footer = () => {
             💼
           </span>
         </FooterHeading>
-        <PortfolioLink href="https://thebestdeveloper.me" target="_blank">
+        <PortfolioLink
+          underlineColor={colors.primary}
+          href="https://thebestdeveloper.me"
+          target="_blank"
+          rel="noreferrer"
+        >
           The Best Developer
         </PortfolioLink>
         <FooterHeading>
@@ -74,6 +62,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/nagachaitanyakonada/"
             color="#0077B5"
             target="_blank"
+            rel="noreferrer"
           >
             LinkedIn
           </SocialLink>
@@ -81,6 +70,7 @@ const Footer = () => {
             href="https://github.com/ChaituKNag"
             color="#4078c0"
             target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </SocialLink>
@@ -88,6 +78,7 @@ const Footer = () => {
             href="https://www.youtube.com/channel/UCl5dc2m9rRGZsAu04ytfDjw/featured?view_as=subscriber"
             color="#ff0000"
             target="_blank"
+            rel="noreferrer"
           >
             YouTube
           </SocialLink>
@@ -95,6 +86,7 @@ const Footer = () => {
             href="https://twitter.com/ItsKNC"
             color="#1da1f2"
             target="_blank"
+            rel="noreferrer"
           >
             Twitter
           </SocialLink>
@@ -102,6 +94,7 @@ const Footer = () => {
             href="https://www.facebook.com/ChaituKNag"
             color="#3b5998"
             target="_blank"
+            rel="noreferrer"
           >
             Facebook
           </SocialLink>
@@ -109,6 +102,7 @@ const Footer = () => {
             href="https://www.instagram.com/chaituknag/"
             color="#e1306c"
             target="_blank"
+            rel="noreferrer"
           >
             Instagram
           </SocialLink>

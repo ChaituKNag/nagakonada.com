@@ -3,7 +3,8 @@ import styled from "styled-components"
 import WideColumnContainer from "../styled/WideColumnContainer"
 import Row from "../styled/Row"
 import { fonts, colors, mediaQueries } from "../../styles/variables"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
+import Link from "./Link"
 
 const HeaderWrapper = styled.header`
   background-color: ${colors.light};
@@ -58,17 +59,7 @@ const LinksSection = styled.div`
 `
 
 const HeaderLink = styled(Link)`
-  text-decoration: none;
-  color: ${colors.secondary};
-  font-weight: bold;
   margin: 0 0.5em;
-  border-bottom: 5px solid transparent;
-  &:focus,
-  &:active,
-  &:hover,
-  &.active {
-    border-bottom: 5px solid ${colors.primary};
-  }
 `
 
 const Header = ({ home }) => {
@@ -81,7 +72,7 @@ const Header = ({ home }) => {
             <HeaderTitle home={home} onClick={goHome}>
               Naga Konada
             </HeaderTitle>
-            {!home ? <HeaderCaption>I code UI. I React! </HeaderCaption> : null}
+            {!home ? <HeaderCaption>I make UI. I React! </HeaderCaption> : null}
           </TitleSection>
           <LinksSection>
             <nav>
