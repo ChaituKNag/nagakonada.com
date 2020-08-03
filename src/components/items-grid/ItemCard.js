@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { colors, fonts } from "../../styles/variables"
 import Button from "../common/Button"
+import { navigate } from "gatsby"
 
 const CardWrapper = styled.div`
   border: 3px solid ${colors.secondary};
@@ -60,16 +61,18 @@ const CardContentWrapper = styled.div`
   `
       : ""}
 `
-const ItemCard = ({ stacked }) => {
+const ItemCard = ({ item, stacked }) => {
+  const goto = url => navigate("/" + url)
   return (
-    <CardWrapper stacked={stacked} className="card" data-date="12th May 2020">
+    <CardWrapper
+      stacked={stacked}
+      className="card"
+      data-date={item.frontmatter.date}
+    >
       <CardContentWrapper stacked={stacked} className="card-content">
-        <h5>Lorem ipsum dolor.</h5>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse,
-          minima.
-        </div>
-        <Button>Learn More</Button>
+        <h5>{item.frontmatter.title}</h5>
+        <div>{item.frontmatter.intro}</div>
+        <Button onClick={() => goto(item.slug)}>Learn More</Button>
       </CardContentWrapper>
     </CardWrapper>
   )

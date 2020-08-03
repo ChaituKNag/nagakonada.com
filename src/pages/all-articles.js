@@ -9,7 +9,7 @@ const AllArticles = () => {
   } = useStaticQuery(graphql`
     {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/.*content/articless/.*/" } }
+        filter: { fileAbsolutePath: { regex: "/.*content/articles/.*/" } }
       ) {
         edges {
           node {

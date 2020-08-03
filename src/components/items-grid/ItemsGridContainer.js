@@ -57,11 +57,9 @@ const ItemsGridContainer = ({ items, noItemsMessage }) => {
     <Fragment>
       <GridSwapper onSelect={handleLayoutChange} selected={selectedLayout} />
       <GridWrapper stacked={stacked}>
-        <ItemCard stacked={stacked} />
-        <ItemCard stacked={stacked} />
-        <ItemCard stacked={stacked} />
-        <ItemCard stacked={stacked} />
-        <ItemCard stacked={stacked} />
+        {items.map(item => (
+          <ItemCard key={item.node.slug} item={item.node} stacked={stacked} />
+        ))}
       </GridWrapper>
     </Fragment>
   )

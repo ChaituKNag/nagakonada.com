@@ -83,14 +83,14 @@ const Header = () => {
           <LinksSection>
             <nav>
               <Row justify="space-between">
-                <HeaderLink activeClassName="active" to="/all-blogs">
-                  Blogs
-                </HeaderLink>
                 <HeaderLink activeClassName="active" to="/all-articles">
                   Articles
                 </HeaderLink>
                 <HeaderLink activeClassName="active" to="/all-tutorials">
                   Tutorials
+                </HeaderLink>
+                <HeaderLink activeClassName="active" to="/all-blogs">
+                  Blogs
                 </HeaderLink>
               </Row>
             </nav>
