@@ -4,11 +4,16 @@ import StretchedColumn from "../styled/StretchedColumn"
 import Footer from "../common/Footer"
 import Header from "../common/Header"
 
-const TutorialLayout = ({ children }) => {
+const TutorialLayout = ({ pageContext, children }) => {
   return (
     <ThemeWrapper>
       <Header />
-      <StretchedColumn>{children}</StretchedColumn>
+      <StretchedColumn>
+        {pageContext.frontmatter.title ? (
+          <h1>{pageContext.frontmatter.title}</h1>
+        ) : null}
+        {children}
+      </StretchedColumn>
       <Footer />
     </ThemeWrapper>
   )
