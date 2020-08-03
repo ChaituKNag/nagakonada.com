@@ -64,6 +64,13 @@ module.exports = {
               height: 400,
               ratio: 1.77,
               containerClass: "youtube-video-container",
+              urlOverrides: [
+                {
+                  id: "youtube",
+                  embedURL: videoId =>
+                    `https://www.youtube-nocookie.com/embed/${videoId}`,
+                },
+              ],
             },
           },
           {
