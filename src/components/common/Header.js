@@ -35,7 +35,7 @@ const HeaderTitle = styled.h4`
   margin: 0.25em 0 0;
   cursor: pointer;
 
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: ${colors.secondary};
 
   @media ${mediaQueries.desktopUp} {
