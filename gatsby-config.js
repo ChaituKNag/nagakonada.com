@@ -64,6 +64,7 @@ module.exports = {
           articles: require.resolve("./src/components/layouts/article.js"),
           tutorials: require.resolve("./src/components/layouts/tutorial.js"),
         },
+        remarkPlugins: [require("remark-slug")],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-embed-video`,
@@ -96,6 +97,10 @@ module.exports = {
             },
           },
         ],
+        tableOfContents: {
+          heading: null,
+          maxDepth: 6,
+        },
       },
     },
     `gatsby-plugin-styled-components`,
