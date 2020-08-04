@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { colors, fonts } from "../../styles/variables"
 import Button from "../common/Button"
-import { navigate } from "gatsby"
+import goto from "../../utils/goto-page"
 
 const CardWrapper = styled.div`
   border: 3px solid ${colors.secondary};
@@ -61,8 +61,7 @@ const CardContentWrapper = styled.div`
   `
       : ""}
 `
-const ItemCard = ({ item, stacked }) => {
-  const goto = url => navigate("/" + url)
+const ItemCard = ({ item, stacked, urlPrefix = "/" }) => {
   return (
     <CardWrapper
       stacked={stacked}
@@ -72,7 +71,7 @@ const ItemCard = ({ item, stacked }) => {
       <CardContentWrapper stacked={stacked} className="card-content">
         <h5>{item.frontmatter.title}</h5>
         <div>{item.frontmatter.intro}</div>
-        <Button onClick={() => goto(item.slug)}>Learn More</Button>
+        <Button onClick={goto(urlPrefix + item.slug)}>Learn More</Button>
       </CardContentWrapper>
     </CardWrapper>
   )

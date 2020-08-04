@@ -3,9 +3,9 @@ import Layout from "../components/layouts/default"
 import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
 
-const AllArticles = () => {
+const AllTutorials = () => {
   const {
-    allMdx: { edges: blogs },
+    allMdx: { edges: tutorials },
   } = useStaticQuery(graphql`
     {
       allMdx(
@@ -30,11 +30,12 @@ const AllArticles = () => {
   return (
     <Layout>
       <ItemsGridContainer
-        items={blogs}
+        items={tutorials}
+        itemUrlPrefix="/tutorial/"
         noItemsMessage="These are exciting times, please stick around!!"
       />
     </Layout>
   )
 }
 
-export default AllArticles
+export default AllTutorials

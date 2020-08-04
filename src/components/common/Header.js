@@ -3,8 +3,8 @@ import styled from "styled-components"
 import WideColumnContainer from "../styled/WideColumnContainer"
 import Row from "../styled/Row"
 import { fonts, colors, mediaQueries } from "../../styles/variables"
-import { navigate } from "gatsby"
 import Link from "./Link"
+import goto from "../../utils/goto-page"
 
 const HeaderWrapper = styled.header`
   background-color: ${colors.light};
@@ -63,13 +63,17 @@ const HeaderLink = styled(Link)`
 `
 
 const Header = ({ home }) => {
-  const goHome = () => navigate("/")
   return (
     <HeaderWrapper>
       <WideColumnContainer>
         <HeaderRow>
           <TitleSection>
-            <HeaderTitle home={home} onClick={goHome}>
+            <HeaderTitle
+              tabIndex="0"
+              home={home}
+              onClick={goto("/")}
+              onKeyPress={goto("/")}
+            >
               Naga Konada
             </HeaderTitle>
             {!home ? <HeaderCaption>I make UI. I React! </HeaderCaption> : null}

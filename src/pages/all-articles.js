@@ -31,6 +31,7 @@ const AllArticles = () => {
     <Layout>
       <ItemsGridContainer
         items={articles}
+        itemUrlPrefix="/article/"
         noItemsMessage="We are churning the articles, please do come back later!"
       />
     </Layout>

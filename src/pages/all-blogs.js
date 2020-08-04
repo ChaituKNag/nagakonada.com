@@ -3,7 +3,7 @@ import Layout from "../components/layouts/default"
 import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
 
-const AllArticles = () => {
+const AllBlogs = () => {
   const {
     allMdx: { edges: blogs },
   } = useStaticQuery(graphql`
@@ -29,10 +29,11 @@ const AllArticles = () => {
     <Layout>
       <ItemsGridContainer
         items={blogs}
+        itemUrlPrefix="/blog/"
         noItemsMessage="I'm still thinking what to write..."
       />
     </Layout>
   )
 }
 
-export default AllArticles
+export default AllBlogs

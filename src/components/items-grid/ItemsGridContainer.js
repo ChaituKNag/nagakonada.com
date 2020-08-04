@@ -45,7 +45,7 @@ const NoItemsSection = styled.div`
   padding: 5rem 0;
 `
 
-const ItemsGridContainer = ({ items, noItemsMessage }) => {
+const ItemsGridContainer = ({ items, itemUrlPrefix, noItemsMessage }) => {
   const [selectedLayout, setSelectedLayout] = useState("grid")
   const handleLayoutChange = layout => () => setSelectedLayout(layout)
   const stacked = selectedLayout === "list"
@@ -58,7 +58,12 @@ const ItemsGridContainer = ({ items, noItemsMessage }) => {
       <GridSwapper onSelect={handleLayoutChange} selected={selectedLayout} />
       <GridWrapper stacked={stacked}>
         {items.map(item => (
-          <ItemCard key={item.node.slug} item={item.node} stacked={stacked} />
+          <ItemCard
+            key={item.node.slug}
+            item={item.node}
+            stacked={stacked}
+            urlPrefix={itemUrlPrefix}
+          />
         ))}
       </GridWrapper>
     </Fragment>

@@ -13,6 +13,8 @@ const SwapperButton = styled.button`
   background-color: ${colors.white};
   border: 2px solid ${colors.secondary};
   font-family: ${fonts.special};
+  margin: 0;
+  cursor: pointer;
 `
 
 const ListSwapperButton = styled(SwapperButton)`
