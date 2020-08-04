@@ -12,7 +12,7 @@ html, body {
     font-family: ${fonts.body};
     font-weight: 300;
     font-size: 16px;
-    line-height: 200%;
+    line-height: 1.7;
     color: ${colors.base}
 }
 
@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
     // font-style: oblique;
     font-weight: 400;
     margin: .5em 0 .5em;
-    line-height: 100%;
+    line-height: 1;
     color: ${colors.primary}
 }
 

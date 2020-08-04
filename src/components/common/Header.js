@@ -47,6 +47,10 @@ const HeaderTitle = styled.h4`
 
 const HeaderCaption = styled.span`
   font-family: ${fonts.special};
+  @media ${mediaQueries.desktopUp} {
+    font-size: 0.7em;
+    line-height: 2.4;
+  }
 `
 
 const LinksSection = styled.div`

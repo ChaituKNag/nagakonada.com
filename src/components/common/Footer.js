@@ -10,7 +10,7 @@ const FooterWrapper = styled.footer`
   padding: 1rem 0.5rem 2rem;
 `
 const FooterHeading = styled.h6`
-  font-size: 0.9em;
+  font-size: 1.1em;
   margin-top: 2rem;
 `
 
