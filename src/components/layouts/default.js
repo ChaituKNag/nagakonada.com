@@ -7,7 +7,6 @@ import { useLocation } from "@reach/router"
 
 const Layout = ({ children }) => {
   const location = useLocation()
-  console.log(location)
   return (
     <ThemeWrapper>
       <Header home={location.pathname === "/"} />

@@ -54,7 +54,6 @@ const HeroSection = () => {
       }
     }
   `)
-  console.log(image.fluid)
 
   return (
     <HeroWrapper>

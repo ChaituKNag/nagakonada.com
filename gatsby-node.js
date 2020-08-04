@@ -19,7 +19,6 @@ const createArticlePages = async (graphql, createPage) => {
 
   if (data.allMdx.edges.length > 0) {
     data.allMdx.edges.forEach(({ node }) => {
-      console.log(node.id)
       createPage({
         path: `/article/${node.slug}`,
         component: articleTemplate,
@@ -50,7 +49,6 @@ const createBlogPages = async (graphql, createPage) => {
 
   if (data.allMdx.edges.length > 0) {
     data.allMdx.edges.forEach(({ node }) => {
-      console.log(node.id)
       createPage({
         path: `/blog/${node.slug}`,
         component: blogTemplate,
@@ -83,7 +81,6 @@ const createTutorialPages = async (graphql, createPage) => {
 
   if (data.allMdx.edges.length > 0) {
     data.allMdx.edges.forEach(({ node }) => {
-      console.log(node.id)
       createPage({
         path: `/tutorial/${node.slug}`,
         component: tutorialTemplate,

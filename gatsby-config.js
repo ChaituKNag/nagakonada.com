@@ -44,7 +44,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -56,6 +56,12 @@ module.exports = {
         display: `standalone`,
         lang: "en",
         icon: "src/assets/images/favicon.png",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: ["/blog/*", "/article/*", "/tutorial/*"],
       },
     },
     `gatsby-transformer-sharp`,
