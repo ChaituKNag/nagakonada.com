@@ -5,10 +5,12 @@ import Footer from "../common/Footer"
 import Header from "../common/Header"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Seo from "../common/Seo"
 
 const TutorialLayout = ({ data }) => {
   return (
     <ThemeWrapper>
+      <Seo title={data.mdx.frontmatter.title} />
       <Header />
       <StretchedColumn>
         {data.mdx.frontmatter.title ? (

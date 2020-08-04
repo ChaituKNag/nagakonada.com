@@ -18,7 +18,7 @@ export const mediaQueries = {
 
 export const colors = {
   base: "#333",
-  primary: "#2d60a0",
+  primary: "#3072c5",
   secondary: "#d81b60",
   light: "#eee",
   white: "white",

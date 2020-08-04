@@ -5,11 +5,13 @@ import StretchedColumn from "../styled/StretchedColumn"
 import Footer from "../common/Footer"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Seo from "../common/Seo"
 
 const ArticleLayout = props => {
   const { data } = props
   return (
     <ThemeWrapper>
+      <Seo title={data.mdx.frontmatter.title} />
       <Header />
       <StretchedColumn>
         {data.mdx.frontmatter.title ? (

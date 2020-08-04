@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layouts/default"
 import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
+import Seo from "../components/common/Seo"
 
 const AllTutorials = () => {
   const {
@@ -29,6 +30,7 @@ const AllTutorials = () => {
 
   return (
     <Layout>
+      <Seo title="All tutorials" />
       <ItemsGridContainer
         items={tutorials}
         itemUrlPrefix="/tutorial/"

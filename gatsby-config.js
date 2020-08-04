@@ -1,4 +1,12 @@
 module.exports = {
+  siteMetadata: {
+    title: "Naga Konada",
+    description:
+      "I am a frontend developer best known for developing highly performing web applications using most modern technical solutions which proved to stand the test of time by being accessible, secure, scalable and modular. My best work is in React, Node.js and ES6.",
+    author: `@ChaituKNag`,
+    siteUrl: `https://nagakonada.com`,
+    twitterUsername: "@itsKNC",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,6 +43,7 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
