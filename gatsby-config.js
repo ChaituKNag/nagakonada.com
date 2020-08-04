@@ -44,6 +44,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Naga Konada - writings`,
+        short_name: `Naga Writings`,
+        start_url: `/`,
+        background_color: `#eee`,
+        theme_color: `#3072c5`,
+        display: `standalone`,
+        lang: "en",
+        icon: "src/assets/images/favicon.png",
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
