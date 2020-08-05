@@ -45,7 +45,7 @@ const CardWrapper = styled.div`
     transform: none;
     padding: 10px;
     border:none;
-    border-top: 2px solid teal;
+    border-top: 2px solid ${colors.secondary};
     border-radius: 0;
   `
       : ""}

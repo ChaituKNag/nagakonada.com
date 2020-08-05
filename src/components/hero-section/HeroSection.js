@@ -17,7 +17,7 @@ const ImageWrapper = styled(Img)`
   width: 200px;
   backface-visibility: visible;
   transform: perspective(200px) rotateY(5deg);
-  margin: 2rem 2rem 3rem;
+  margin: 0 2rem;
   border: 2px solid ${colors.secondary};
   border-radius: 5px;
   box-shadow: -5px 0 10px ${colors.boxShadow};
@@ -36,8 +36,17 @@ const ImageWrapper = styled(Img)`
 `
 
 const HeroCaption = styled.span`
-  font-family: ${fonts.special};
-  font-size: 1.6rem;
+  font-family: ${fonts.body};
+  font-size: 4.5rem;
+  line-height: 0.9;
+  letter-spacing: -6px;
+  text-align: center;
+  margin: 0.5em 0;
+
+  @media ${mediaQueries.desktopUp} {
+    font-size: 5.5rem;
+    line-height: 0.8;
+  }
 `
 
 const HeroContent = styled.div`
