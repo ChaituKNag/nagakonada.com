@@ -6,6 +6,7 @@ import { fonts, colors, mediaQueries } from "../../styles/variables"
 import Link from "./Link"
 import goto from "../../utils/goto-page"
 import { useLocation } from "@reach/router"
+import { motion } from "framer-motion"
 
 const HeaderWrapper = styled.header`
   background-color: ${colors.light};
@@ -63,9 +64,36 @@ const LinksSection = styled.div`
   }
 `
 
-const HeaderLink = styled(Link)`
+const HeaderLink = styled(motion.span)`
   margin: 0 0.5em;
 `
+
+const navVariants = {
+  hidden: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const linkVariants = {
+  hidden: {
+    y: -100,
+  },
+  visible: {
+    y: 0,
+  },
+}
+
+const linkTransition = {
+  duration: 0.5,
+  ease: "easeInOut",
+}
 
 const Header = () => {
   const location = useLocation()
@@ -86,19 +114,29 @@ const Header = () => {
             {!home ? <HeaderCaption>I make UI. I React! </HeaderCaption> : null}
           </TitleSection>
           <LinksSection>
-            <nav>
+            <motion.nav
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <Row justify="space-between">
-                <HeaderLink activeClassName="active" to="/all-articles">
-                  Articles
+                <HeaderLink variants={linkVariants} transition={linkTransition}>
+                  <Link activeClassName="active" to="/all-articles">
+                    Articles
+                  </Link>
                 </HeaderLink>
-                <HeaderLink activeClassName="active" to="/all-tutorials">
-                  Tutorials
+                <HeaderLink variants={linkVariants} transition={linkTransition}>
+                  <Link activeClassName="active" to="/all-tutorials">
+                    Tutorials
+                  </Link>
                 </HeaderLink>
-                <HeaderLink activeClassName="active" to="/all-blogs">
-                  Blogs
+                <HeaderLink variants={linkVariants} transition={linkTransition}>
+                  <Link activeClassName="active" to="/all-blogs">
+                    Blogs
+                  </Link>
                 </HeaderLink>
               </Row>
-            </nav>
+            </motion.nav>
           </LinksSection>
         </HeaderRow>
       </WideColumnContainer>
