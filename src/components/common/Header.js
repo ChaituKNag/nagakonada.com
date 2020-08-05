@@ -5,6 +5,7 @@ import Row from "../styled/Row"
 import { fonts, colors, mediaQueries } from "../../styles/variables"
 import Link from "./Link"
 import goto from "../../utils/goto-page"
+import { useLocation } from "@reach/router"
 
 const HeaderWrapper = styled.header`
   background-color: ${colors.light};
@@ -66,7 +67,9 @@ const HeaderLink = styled(Link)`
   margin: 0 0.5em;
 `
 
-const Header = ({ home }) => {
+const Header = () => {
+  const location = useLocation()
+  const home = location.pathname === "/"
   return (
     <HeaderWrapper>
       <WideColumnContainer>

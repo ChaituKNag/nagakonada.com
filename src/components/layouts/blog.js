@@ -1,8 +1,5 @@
-import React from "react"
-import { ThemeWrapper } from "../../styles/theme"
+import React, { Fragment } from "react"
 import StretchedColumn from "../styled/StretchedColumn"
-import Header from "../common/Header"
-import Footer from "../common/Footer"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
@@ -10,17 +7,15 @@ import Seo from "../common/Seo"
 const BlogLayout = props => {
   const { data } = props
   return (
-    <ThemeWrapper>
+    <Fragment>
       <Seo title={data.mdx.frontmatter.title} />
-      <Header />
       <StretchedColumn>
         {data.mdx.frontmatter.title ? (
           <h1>{data.mdx.frontmatter.title}</h1>
         ) : null}
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </StretchedColumn>
-      <Footer />
-    </ThemeWrapper>
+    </Fragment>
   )
 }
 
