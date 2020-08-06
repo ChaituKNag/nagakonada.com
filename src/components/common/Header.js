@@ -42,6 +42,7 @@ const TitleSection = styled.div`
 
 const BigHeaderTitle = styled(motion.h4)`
   margin: 0;
+  padding: 0;
   cursor: pointer;
   font-size: 1.8rem;
   color: ${colors.secondary};
@@ -53,6 +54,7 @@ const BigHeaderTitle = styled(motion.h4)`
 
 const HeaderTitle = styled(motion.h4)`
   margin: 0.25em 0 0;
+  padding: 0;
   cursor: pointer;
 
   font-size: 1.5rem;

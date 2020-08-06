@@ -4,9 +4,12 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
+import TableOfContents from "../toc/TableOfContents"
 
 const BlogLayout = props => {
   const { data } = props
+  const title = data.mdx.frontmatter.title
+  const tocItems = data.mdx.tableOfContents.items
   return (
     <StretchedColumn
       variants={fadeInVariants}
@@ -14,10 +17,9 @@ const BlogLayout = props => {
       animate="visible"
       exit="hidden"
     >
-      <Seo title={data.mdx.frontmatter.title} />
-      {data.mdx.frontmatter.title ? (
-        <h1>{data.mdx.frontmatter.title}</h1>
-      ) : null}
+      <Seo title={title} />
+      {title ? <h1>{title}</h1> : null}
+      {tocItems ? <TableOfContents links={tocItems} /> : null}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </StretchedColumn>
   )
@@ -33,6 +35,7 @@ export const query = graphql`
         intro
       }
       timeToRead
+      tableOfContents
       body
       id
     }

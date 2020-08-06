@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import WideColumnContainer from "../styled/WideColumnContainer"
 import { fonts, colors } from "../../styles/variables"
-import Row from "../styled/Row"
 import Anchor from "./Anchor"
 import { motion } from "framer-motion"
 
