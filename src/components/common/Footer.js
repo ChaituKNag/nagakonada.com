@@ -4,6 +4,35 @@ import WideColumnContainer from "../styled/WideColumnContainer"
 import { fonts, colors } from "../../styles/variables"
 import Row from "../styled/Row"
 import Anchor from "./Anchor"
+import { motion } from "framer-motion"
+
+const socialParentVariants = {
+  hidden: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const fromLeftVariants = {
+  hidden: {
+    x: 20,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  },
+}
 
 const FooterWrapper = styled.footer`
   background-image: linear-gradient(
@@ -20,6 +49,13 @@ const FooterHeading = styled.h6`
 
 const PortfolioLink = styled(Anchor)`
   padding: 0.25em 0;
+`
+
+const SocialLinksRow = styled(motion.div)`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 `
 
 const SocialLink = styled(Anchor)`
@@ -61,12 +97,18 @@ const Footer = () => {
             ✍️
           </span>
         </FooterHeading>
-        <Row justify="flex-start" wrap="wrap">
+        <SocialLinksRow
+          variants={socialParentVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+        >
           <SocialLink
             href="https://www.linkedin.com/in/nagachaitanyakonada/"
             color="#0077B5"
             target="_blank"
             rel="noreferrer"
+            variants={fromLeftVariants}
           >
             LinkedIn
           </SocialLink>
@@ -75,6 +117,7 @@ const Footer = () => {
             color="#4078c0"
             target="_blank"
             rel="noreferrer"
+            variants={fromLeftVariants}
           >
             GitHub
           </SocialLink>
@@ -83,6 +126,7 @@ const Footer = () => {
             color="#ff0000"
             target="_blank"
             rel="noreferrer"
+            variants={fromLeftVariants}
           >
             YouTube
           </SocialLink>
@@ -91,6 +135,7 @@ const Footer = () => {
             color="#1da1f2"
             target="_blank"
             rel="noreferrer"
+            variants={fromLeftVariants}
           >
             Twitter
           </SocialLink>
@@ -99,6 +144,7 @@ const Footer = () => {
             color="#3b5998"
             target="_blank"
             rel="noreferrer"
+            variants={fromLeftVariants}
           >
             Facebook
           </SocialLink>
@@ -107,10 +153,11 @@ const Footer = () => {
             color="#e1306c"
             target="_blank"
             rel="noreferrer"
+            variants={fromLeftVariants}
           >
             Instagram
           </SocialLink>
-        </Row>
+        </SocialLinksRow>
         <FooterHeading>Disclaimer</FooterHeading>
         <Disclaimer>
           All technical writings as accurate as humanly possible. All blog posts

@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { colors, fonts } from "../../styles/variables"
+import { motion } from "framer-motion"
 
-export default styled.a`
+export default styled(motion.a)`
   color: ${props => props.color || colors.secondary};
   font-family: ${fonts.body};
   font-weight: 800;

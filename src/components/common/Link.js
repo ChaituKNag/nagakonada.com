@@ -7,15 +7,14 @@ export default styled(Link)`
   color: ${colors.secondary};
   font-weight: bold;
   position: relative;
-  /* border-bottom: 5px solid transparent; */
   &::after {
     content: "";
     position: absolute;
-    top: 100%;
+    top: 110%;
     left: 0;
     transform: scaleX(0);
     width: 100%;
-    height: 5px;
+    height: 4px;
     background-color: ${colors.primary};
     transition: transform 200ms ease-in-out;
     transform-origin: right;
