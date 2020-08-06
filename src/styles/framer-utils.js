@@ -2,15 +2,17 @@ export const fadeInVariants = {
   hidden: {
     opacity: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.2,
       ease: "easeOut",
+      when: "afterChildren",
     },
   },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
-      ease: "easeOut",
+      duration: 0.3,
+      ease: "easeIn",
+      when: "beforeChildren",
     },
   },
 }

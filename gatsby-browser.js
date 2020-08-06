@@ -5,13 +5,14 @@ const ThemeWrapper = require("./src/styles/theme").ThemeWrapper
 const Header = require("./src/components/common/Header").default
 const Footer = require("./src/components/common/Footer").default
 const AnimateSharedLayout = require("framer-motion").AnimateSharedLayout
+const AnimatePresence = require("framer-motion").AnimatePresence
 
 exports.wrapPageElement = ({ element }) => {
   return (
     <ThemeWrapper>
       <AnimateSharedLayout type="crossfade">
         <Header />
-        {element}
+        <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
         <Footer />
       </AnimateSharedLayout>
     </ThemeWrapper>

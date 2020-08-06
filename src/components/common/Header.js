@@ -9,7 +9,12 @@ import { useLocation } from "@reach/router"
 import { motion } from "framer-motion"
 
 const HeaderWrapper = styled.header`
-  background-color: ${colors.light};
+  background-image: linear-gradient(
+    135deg,
+    ${colors.white} 0%,
+    ${colors.light} 100%
+  );
+
   padding: 0 0.5rem;
 `
 

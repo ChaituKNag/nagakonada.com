@@ -6,7 +6,11 @@ import Row from "../styled/Row"
 import Anchor from "./Anchor"
 
 const FooterWrapper = styled.footer`
-  background-color: ${colors.light};
+  background-image: linear-gradient(
+    135deg,
+    ${colors.light} 0%,
+    ${colors.white} 100%
+  );
   padding: 1rem 0.5rem 2rem;
 `
 const FooterHeading = styled.h6`
