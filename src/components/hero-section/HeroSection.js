@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { fonts, colors, mediaQueries, widths } from "../../styles/variables"
 import Link from "../common/Link"
+import { motion } from "framer-motion"
 
 const HeroWrapper = styled.section`
   display: flex;
@@ -35,13 +36,14 @@ const ImageWrapper = styled(Img)`
   }
 `
 
-const HeroCaption = styled.span`
+const HeroCaption = styled(motion.span)`
   font-family: ${fonts.body};
   font-size: 4.5rem;
   line-height: 0.9;
   letter-spacing: -6px;
   text-align: center;
   margin: 0.5em 0;
+  z-index: 1;
 
   @media ${mediaQueries.desktopUp} {
     font-size: 5.5rem;
@@ -69,7 +71,7 @@ const HeroSection = () => {
       <a href="https://thebestdeveloper.me" target="_blank" rel="noreferrer">
         <ImageWrapper fluid={image.fluid} alt="My profile pic" />
       </a>
-      <HeroCaption>I make UI. I React!</HeroCaption>
+      <HeroCaption layoutId="caption">I make UI. I React!</HeroCaption>
       <HeroContent>
         <p>
           Check out all my{" "}

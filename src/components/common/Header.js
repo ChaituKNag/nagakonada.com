@@ -35,20 +35,32 @@ const TitleSection = styled.div`
   }
 `
 
-const HeaderTitle = styled.h4`
-  margin: ${props => (props.home ? `0` : `0.25em 0 0`)};
+const BigHeaderTitle = styled(motion.h4)`
+  margin: 0;
   cursor: pointer;
-
-  font-size: ${props => (props.home ? "1.8rem" : "1.5rem")};
+  font-size: 1.8rem;
   color: ${colors.secondary};
 
   @media ${mediaQueries.desktopUp} {
-    font-size: ${props => (props.home ? "1.7rem" : "1.4rem")};
+    font-size: 1.7rem;
   }
 `
 
-const HeaderCaption = styled.span`
+const HeaderTitle = styled(motion.h4)`
+  margin: 0.25em 0 0;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  color: ${colors.secondary};
+
+  @media ${mediaQueries.desktopUp} {
+    font-size: 1.4rem;
+  }
+`
+
+const HeaderCaption = styled(motion.span)`
   font-family: ${fonts.special};
+  z-index: 1;
   @media ${mediaQueries.desktopUp} {
     font-size: 0.7em;
     line-height: 2.4;
@@ -103,15 +115,31 @@ const Header = () => {
       <WideColumnContainer>
         <HeaderRow>
           <TitleSection>
-            <HeaderTitle
-              tabIndex="0"
-              home={home}
-              onClick={goto("/")}
-              onKeyPress={goto("/")}
-            >
-              Naga Konada
-            </HeaderTitle>
-            {!home ? <HeaderCaption>I make UI. I React! </HeaderCaption> : null}
+            {home ? (
+              <BigHeaderTitle
+                layoutId="header-title"
+                tabIndex="0"
+                onClick={goto("/")}
+                onKeyPress={goto("/")}
+              >
+                Naga Konada
+              </BigHeaderTitle>
+            ) : (
+              <HeaderTitle
+                layoutId="header-title"
+                tabIndex="0"
+                onClick={goto("/")}
+                onKeyPress={goto("/")}
+              >
+                Naga Konada
+              </HeaderTitle>
+            )}
+
+            {!home ? (
+              <HeaderCaption layoutId="caption">
+                I make UI. I React!{" "}
+              </HeaderCaption>
+            ) : null}
           </TitleSection>
           <LinksSection>
             <motion.nav

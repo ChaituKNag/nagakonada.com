@@ -4,13 +4,16 @@ const React = require("react")
 const ThemeWrapper = require("./src/styles/theme").ThemeWrapper
 const Header = require("./src/components/common/Header").default
 const Footer = require("./src/components/common/Footer").default
+const AnimateSharedLayout = require("framer-motion").AnimateSharedLayout
 
 exports.wrapPageElement = ({ element }) => {
   return (
     <ThemeWrapper>
-      <Header />
-      {element}
-      <Footer />
+      <AnimateSharedLayout type="crossfade">
+        <Header />
+        {element}
+        <Footer />
+      </AnimateSharedLayout>
     </ThemeWrapper>
   )
 }
