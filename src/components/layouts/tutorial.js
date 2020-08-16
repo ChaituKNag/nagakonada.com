@@ -4,8 +4,10 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
+import { motion } from "framer-motion"
 
 const TutorialLayout = ({ data }) => {
+  const slug = data.mdx.slug
   return (
     <StretchedColumn
       variants={fadeInVariants}
@@ -15,7 +17,9 @@ const TutorialLayout = ({ data }) => {
     >
       <Seo title={data.mdx.frontmatter.title} />
       {data.mdx.frontmatter.title ? (
-        <h1>{data.mdx.frontmatter.title}</h1>
+        <motion.h1 layoutId={`post-${slug}`}>
+          {data.mdx.frontmatter.title}
+        </motion.h1>
       ) : null}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </StretchedColumn>

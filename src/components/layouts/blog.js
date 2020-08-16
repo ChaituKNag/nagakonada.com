@@ -5,11 +5,13 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
 import TableOfContents from "../toc/TableOfContents"
+import { motion } from "framer-motion"
 
 const BlogLayout = props => {
   const { data } = props
   const title = data.mdx.frontmatter.title
   const tocItems = data.mdx.tableOfContents.items
+  const slug = data.mdx.slug
   return (
     <StretchedColumn
       variants={fadeInVariants}
@@ -18,7 +20,7 @@ const BlogLayout = props => {
       exit="hidden"
     >
       <Seo title={title} />
-      {title ? <h1>{title}</h1> : null}
+      {title ? <motion.h1 layoutId={`post-${slug}`}>{title}</motion.h1> : null}
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </StretchedColumn>

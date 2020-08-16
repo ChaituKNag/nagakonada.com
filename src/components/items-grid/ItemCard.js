@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import { colors, fonts } from "../../styles/variables"
 import Button from "../common/Button"
 import goto from "../../utils/goto-page"
@@ -69,7 +70,9 @@ const ItemCard = ({ item, stacked, urlPrefix = "/" }) => {
       data-date={item.frontmatter.date}
     >
       <CardContentWrapper stacked={stacked} className="card-content">
-        <h5>{item.frontmatter.title}</h5>
+        <motion.h5 layoutId={`post-${item.slug}`}>
+          {item.frontmatter.title}
+        </motion.h5>
         <div>{item.frontmatter.intro}</div>
         <Button onClick={goto(urlPrefix + item.slug)}>Learn More</Button>
       </CardContentWrapper>
