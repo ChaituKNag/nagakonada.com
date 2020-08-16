@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
 import TableOfContents from "../toc/TableOfContents"
-import StretchedColumn from "../styled/StretchedColumn"
+import Container from "../styled/Container"
 import { motion } from "framer-motion"
 
 const ArticleLayout = props => {
@@ -13,7 +13,7 @@ const ArticleLayout = props => {
   const tocItems = data.mdx.tableOfContents.items
   const slug = data.mdx.slug
   return (
-    <StretchedColumn
+    <Container
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
@@ -23,7 +23,7 @@ const ArticleLayout = props => {
       {title ? <motion.h1 layoutId={`post-${slug}`}>{title}</motion.h1> : null}
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
-    </StretchedColumn>
+    </Container>
   )
 }
 

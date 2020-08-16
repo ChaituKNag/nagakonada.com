@@ -1,17 +1,18 @@
 import React from "react"
-import WideStretchedColumn from "../styled/WideStretchedColumn"
+import Container from "../styled/Container"
 import { fadeInVariants } from "../../styles/framer-utils"
 
 const Layout = ({ children }) => {
   return (
-    <WideStretchedColumn
+    <Container
+      wide
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
       exit="hidden"
     >
       {children}
-    </WideStretchedColumn>
+    </Container>
   )
 }
 

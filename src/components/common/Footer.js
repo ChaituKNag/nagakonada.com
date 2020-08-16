@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import WideColumnContainer from "../styled/WideColumnContainer"
+import Container from "../styled/Container"
 import { fonts, colors } from "../../styles/variables"
 import Anchor from "./Anchor"
 import { motion } from "framer-motion"
@@ -75,7 +75,7 @@ const Disclaimer = styled.p`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <WideColumnContainer>
+      <Container wide>
         <FooterHeading>
           Checkout my portfolio site{" "}
           <span role="img" aria-label="portfolio suitcase icon">
@@ -163,7 +163,7 @@ const Footer = () => {
           are my personal facts and opinions. All rights are reserved &copy;
           Naga Konada.
         </Disclaimer>
-      </WideColumnContainer>
+      </Container>
     </FooterWrapper>
   )
 }

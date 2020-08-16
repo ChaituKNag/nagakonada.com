@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import WideColumnContainer from "../styled/WideColumnContainer"
+import Container from "../styled/Container"
 import Row from "../styled/Row"
 import { fonts, colors, mediaQueries } from "../../styles/variables"
 import Link from "./Link"
@@ -119,7 +119,7 @@ const Header = () => {
   const home = location.pathname === "/"
   return (
     <HeaderWrapper>
-      <WideColumnContainer>
+      <Container wide margin="0 auto">
         <HeaderRow>
           <TitleSection>
             {home ? (
@@ -174,7 +174,7 @@ const Header = () => {
             </motion.nav>
           </LinksSection>
         </HeaderRow>
-      </WideColumnContainer>
+      </Container>
     </HeaderWrapper>
   )
 }

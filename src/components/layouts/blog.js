@@ -1,5 +1,5 @@
 import React from "react"
-import StretchedColumn from "../styled/StretchedColumn"
+import Container from "../styled/Container"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
@@ -13,7 +13,7 @@ const BlogLayout = props => {
   const tocItems = data.mdx.tableOfContents.items
   const slug = data.mdx.slug
   return (
-    <StretchedColumn
+    <Container
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
@@ -23,7 +23,7 @@ const BlogLayout = props => {
       {title ? <motion.h1 layoutId={`post-${slug}`}>{title}</motion.h1> : null}
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
-    </StretchedColumn>
+    </Container>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from "react"
-import StretchedColumn from "../styled/StretchedColumn"
+import Container from "../styled/Container"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
@@ -9,7 +9,8 @@ import { motion } from "framer-motion"
 const TutorialLayout = ({ data }) => {
   const slug = data.mdx.slug
   return (
-    <StretchedColumn
+    <Container
+      wide
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
@@ -22,7 +23,7 @@ const TutorialLayout = ({ data }) => {
         </motion.h1>
       ) : null}
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
-    </StretchedColumn>
+    </Container>
   )
 }
 
