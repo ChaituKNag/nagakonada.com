@@ -14,6 +14,7 @@ const BlogLayout = props => {
   const slug = data.mdx.slug
   return (
     <Container
+      margin="0 auto 2rem"
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"

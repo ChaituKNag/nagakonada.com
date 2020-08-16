@@ -10,7 +10,6 @@ const TutorialLayout = ({ data }) => {
   const slug = data.mdx.slug
   return (
     <Container
-      wide
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
