@@ -65,7 +65,10 @@ const ItemsGridContainer = ({
         {items.map(item => (
           <ItemCard
             key={item.node.slug}
-            item={item.node}
+            title={item.node.frontmatter.title}
+            intro={item.node.frontmatter.intro}
+            date={item.node.frontmatter.date}
+            slug={item.node.slug}
             stacked={stacked}
             urlPrefix={itemUrlPrefix}
             themeColor={themeColor}
