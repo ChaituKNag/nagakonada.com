@@ -6,7 +6,9 @@ import Button from "../common/Button"
 import goto from "../../utils/goto-page"
 
 const CardWrapper = styled.div`
-  border: 3px solid ${colors.secondary};
+  border: 3px solid
+    ${props =>
+      props.themeColor === colors.primary ? colors.primary : colors.secondary};
   border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
@@ -24,7 +26,11 @@ const CardWrapper = styled.div`
     padding: 10px;
     line-height: 1;
     border-radius: 5px;
-    border: 2px solid ${colors.secondary};
+    border: 2px solid
+      ${props =>
+        props.themeColor === colors.primary
+          ? colors.primary
+          : colors.secondary};
     box-shadow: 1px 1px 5px ${colors.boxShadow};
     z-index: 1;
     font-size: 0.9em;
@@ -45,8 +51,11 @@ const CardWrapper = styled.div`
       ? `
     transform: none;
     padding: 10px;
-    border:none;
-    border-top: 2px solid ${colors.secondary};
+    border-left:none;
+    border-right:none;
+    border-bottom:none;
+    border-top: 2px solid ${props =>
+      props.themeColor === colors.primary ? colors.secondary : colors.primary};
     border-radius: 0;
   `
       : ""}
@@ -62,19 +71,27 @@ const CardContentWrapper = styled.div`
   `
       : ""}
 `
-const ItemCard = ({ item, stacked, urlPrefix = "/" }) => {
+const CardTitle = styled(motion.h5)`
+  color: ${props =>
+    props.themeColor === colors.primary ? colors.secondary : colors.primary};
+`
+
+const ItemCard = ({ item, stacked, urlPrefix = "/", themeColor }) => {
   return (
     <CardWrapper
       stacked={stacked}
       className="card"
       data-date={item.frontmatter.date}
+      themeColor={themeColor}
     >
       <CardContentWrapper stacked={stacked} className="card-content">
-        <motion.h5 layoutId={`post-${item.slug}`}>
+        <CardTitle layoutId={`post-${item.slug}`} themeColor={themeColor}>
           {item.frontmatter.title}
-        </motion.h5>
+        </CardTitle>
         <div>{item.frontmatter.intro}</div>
-        <Button onClick={goto(urlPrefix + item.slug)}>Learn More</Button>
+        <Button onClick={goto(urlPrefix + item.slug)} themeColor={themeColor}>
+          Learn More
+        </Button>
       </CardContentWrapper>
     </CardWrapper>
   )

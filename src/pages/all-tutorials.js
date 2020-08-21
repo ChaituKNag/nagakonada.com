@@ -3,6 +3,7 @@ import Layout from "../components/layouts/default"
 import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
 import Seo from "../components/common/Seo"
+import { colors } from "../styles/variables"
 
 const AllTutorials = () => {
   const {
@@ -35,6 +36,7 @@ const AllTutorials = () => {
         items={tutorials}
         itemUrlPrefix="/tutorial/"
         noItemsMessage="These are exciting times, please stick around!!"
+        themeColor={colors.primary}
       />
     </Layout>
   )

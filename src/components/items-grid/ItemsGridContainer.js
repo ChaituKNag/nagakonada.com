@@ -45,7 +45,12 @@ const NoItemsSection = styled.div`
   padding: 5rem 0;
 `
 
-const ItemsGridContainer = ({ items, itemUrlPrefix, noItemsMessage }) => {
+const ItemsGridContainer = ({
+  items,
+  itemUrlPrefix,
+  noItemsMessage,
+  themeColor,
+}) => {
   const [selectedLayout, setSelectedLayout] = useState("grid")
   const handleLayoutChange = layout => () => setSelectedLayout(layout)
   const stacked = selectedLayout === "list"
@@ -63,6 +68,7 @@ const ItemsGridContainer = ({ items, itemUrlPrefix, noItemsMessage }) => {
             item={item.node}
             stacked={stacked}
             urlPrefix={itemUrlPrefix}
+            themeColor={themeColor}
           />
         ))}
       </GridWrapper>
