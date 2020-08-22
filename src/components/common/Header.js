@@ -69,7 +69,7 @@ const HeaderCaption = styled(motion.span)`
   font-family: ${fonts.special};
   z-index: 1;
   @media ${mediaQueries.desktopUp} {
-    font-size: 0.7em;
+    font-size: 0.8em;
     line-height: 2.4;
   }
 `

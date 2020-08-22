@@ -132,8 +132,9 @@ module.exports = {
       options: {
         fonts: [
           { family: "Fira Sans", variants: [`400`, `800`] },
+          { family: "Do Hyeon", variants: [`400`] },
           { family: "Montserrat Alternates", variants: [`800i`] },
-          { family: "Oxygen", variants: [`300`, `700`] },
+          { family: "Ubuntu", variants: [`300`, `400`, `700`] },
           { family: "Satisfy", variants: [`400`] },
         ],
       },

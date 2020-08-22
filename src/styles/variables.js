@@ -1,7 +1,7 @@
 export const fonts = {
   heading: `'Satisfy', cursive`,
-  body: `"Oxygen", sans-serif`,
-  special: `'Fira Sans', sans-serif`,
+  body: `"Ubuntu", sans-serif`,
+  special: `'Do Hyeon', sans-serif`,
 }
 
 export const widths = {

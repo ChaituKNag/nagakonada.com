@@ -10,7 +10,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: ${fonts.body};
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
     color: ${colors.base}
@@ -34,7 +34,7 @@ h6 { font-size: 1.4rem;}
 
 @media ${mediaQueries.desktopUp} {
     html, body {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 

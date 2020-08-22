@@ -37,10 +37,10 @@ const ImageWrapper = styled(Img)`
 `
 
 const HeroCaption = styled(motion.span)`
-  font-family: ${fonts.body};
+  font-family: ${fonts.special};
   font-size: 4.5rem;
   line-height: 0.9;
-  letter-spacing: -6px;
+  letter-spacing: -3px;
   text-align: center;
   margin: 0.5em 0;
   z-index: 1;
