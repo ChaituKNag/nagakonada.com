@@ -50,8 +50,9 @@ const ItemsGridContainer = ({
   itemUrlPrefix,
   noItemsMessage,
   themeColor,
+  list = false,
 }) => {
-  const [selectedLayout, setSelectedLayout] = useState("grid")
+  const [selectedLayout, setSelectedLayout] = useState(list ? "list" : "grid")
   const handleLayoutChange = layout => () => setSelectedLayout(layout)
   const stacked = selectedLayout === "list"
 

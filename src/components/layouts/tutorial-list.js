@@ -43,6 +43,7 @@ const TutorialLayout = ({ data }) => {
           itemUrlPrefix={`/tutorial/`}
           noItemsMessage="No tutorials yet. Keep looking!"
           themeColor={colors.primary}
+          list
         />
       </Container>
     </Fragment>
