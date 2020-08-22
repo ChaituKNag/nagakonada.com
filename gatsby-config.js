@@ -39,6 +39,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `tutorialContent`,
+        path: `${__dirname}/src/content/tutorial-content/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/assets/images`,
       },
@@ -75,6 +82,9 @@ module.exports = {
           articles: require.resolve("./src/components/layouts/article.js"),
           tutorials: require.resolve(
             "./src/components/layouts/tutorial-list.js"
+          ),
+          tutorialContent: require.resolve(
+            "./src/components/layouts/tutorial-details.js"
           ),
         },
         remarkPlugins: [require("remark-slug")],
