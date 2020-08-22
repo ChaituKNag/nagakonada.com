@@ -73,7 +73,9 @@ module.exports = {
         defaultLayouts: {
           blogs: require.resolve("./src/components/layouts/blog.js"),
           articles: require.resolve("./src/components/layouts/article.js"),
-          tutorials: require.resolve("./src/components/layouts/tutorial.js"),
+          tutorials: require.resolve(
+            "./src/components/layouts/tutorial-list.js"
+          ),
         },
         remarkPlugins: [require("remark-slug")],
         gatsbyRemarkPlugins: [

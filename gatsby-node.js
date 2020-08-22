@@ -63,9 +63,11 @@ const createBlogPages = async (graphql, createPage) => {
 }
 
 const createTutorialPages = async (graphql, createPage) => {
-  const tutorialTemplate = path.resolve(`src/components/layouts/tutorial.js`)
+  const tutorialTemplate = path.resolve(
+    `src/components/layouts/tutorial-list.js`
+  )
   const { data } = await graphql(`
-    query AllArticles {
+    query AllTutorials {
       allMdx(
         filter: { fileAbsolutePath: { regex: "/.*content/tutorials/.*/" } }
       ) {
@@ -73,6 +75,9 @@ const createTutorialPages = async (graphql, createPage) => {
           node {
             id
             slug
+            frontmatter {
+              tutorialId
+            }
           }
         }
       }
@@ -86,6 +91,7 @@ const createTutorialPages = async (graphql, createPage) => {
         component: tutorialTemplate,
         context: {
           id: node.id,
+          tutorialId: node.frontmatter ? node.frontmatter.tutorialId : null,
         },
       })
     })

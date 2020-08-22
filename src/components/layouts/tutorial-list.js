@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 
 const TutorialLayout = ({ data }) => {
   const slug = data.mdx.slug
+  console.log(data)
   return (
     <Container
       variants={fadeInVariants}
@@ -27,18 +28,29 @@ const TutorialLayout = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String!) {
+  query($id: String!, $tutorialId: String!) {
     mdx(id: { eq: $id }) {
       slug
       frontmatter {
         title
         date(fromNow: true)
         intro
+        tutorialId
       }
-      timeToRead
-      tableOfContents
       body
-      id
+    }
+    allMdx(filter: { frontmatter: { tutorialId: { eq: $tutorialId } } }) {
+      edges {
+        node {
+          slug
+          frontmatter {
+            title
+            date(fromNow: true)
+            intro
+          }
+          timeToRead
+        }
+      }
     }
   }
 `
