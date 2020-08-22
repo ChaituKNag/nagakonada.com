@@ -35,8 +35,11 @@ const TableOfContents = ({ links }) => {
     <TOCWrapper>
       <h4>Table of contents</h4>
       <ul>
-        {links.map(link => (
-          <TOCListItem current={location.hash === link.url}>
+        {links.map((link, i) => (
+          <TOCListItem
+            key={`${link.url}-${i}`}
+            current={location.hash === link.url}
+          >
             <TOCLink href={link.url}>{link.title}</TOCLink>
           </TOCListItem>
         ))}
