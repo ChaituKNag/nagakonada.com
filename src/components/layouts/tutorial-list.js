@@ -1,29 +1,51 @@
-import React from "react"
+import React, { Fragment } from "react"
 import Container from "../styled/Container"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
 import { motion } from "framer-motion"
+import ItemsGridContainer from "../items-grid/ItemsGridContainer"
+import { mapItem } from "../../utils/map-md-item"
+import { colors } from "../../styles/variables"
 
 const TutorialLayout = ({ data }) => {
   const slug = data.mdx.slug
-  console.log(data)
+  const tutorialEntries = data.allMdx.edges
+  console.log(data.mdx.frontmatter.title)
   return (
-    <Container
-      variants={fadeInVariants}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-    >
-      <Seo title={data.mdx.frontmatter.title} />
-      {data.mdx.frontmatter.title ? (
-        <motion.h1 layoutId={`post-${slug}`}>
-          {data.mdx.frontmatter.title}
-        </motion.h1>
-      ) : null}
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
-    </Container>
+    <Fragment>
+      <Container
+        variants={fadeInVariants}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        margin="2rem auto 0"
+      >
+        <Seo title={data.mdx.frontmatter.title} />
+        {data.mdx.frontmatter.title ? (
+          <motion.h1 layoutId={`post-${slug}`}>
+            {data.mdx.frontmatter.title}
+          </motion.h1>
+        ) : null}
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </Container>
+      <Container
+        variants={fadeInVariants}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        wide
+        margin="0 auto"
+      >
+        <ItemsGridContainer
+          items={tutorialEntries.map(mapItem)}
+          itemUrlPrefix={`/tutorial/`}
+          noItemsMessage="No tutorials yet. Keep looking!"
+          themeColor={colors.primary}
+        />
+      </Container>
+    </Fragment>
   )
 }
 
@@ -39,7 +61,7 @@ export const query = graphql`
       }
       body
     }
-    allMdx(filter: { frontmatter: { tutorialId: { eq: $tutorialId } } }) {
+    allMdx(filter: { frontmatter: { tutorialParent: { eq: $tutorialId } } }) {
       edges {
         node {
           slug
