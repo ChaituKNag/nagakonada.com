@@ -3,6 +3,7 @@ import Layout from "../components/layouts/default"
 import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
 import Seo from "../components/common/Seo"
+import { mapItem } from "../utils/map-md-item"
 
 const AllBlogs = () => {
   const {
@@ -30,7 +31,7 @@ const AllBlogs = () => {
     <Layout>
       <Seo title="All blogs" />
       <ItemsGridContainer
-        items={blogs}
+        items={blogs.map(mapItem)}
         itemUrlPrefix="/blog/"
         noItemsMessage="I'm still thinking what to write..."
       />

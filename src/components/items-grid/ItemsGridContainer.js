@@ -64,11 +64,11 @@ const ItemsGridContainer = ({
       <GridWrapper stacked={stacked}>
         {items.map(item => (
           <ItemCard
-            key={item.node.slug}
-            title={item.node.frontmatter.title}
-            intro={item.node.frontmatter.intro}
-            date={item.node.frontmatter.date}
-            slug={item.node.slug}
+            key={item.slug}
+            title={item.title}
+            intro={item.intro}
+            date={item.date}
+            slug={item.slug}
             stacked={stacked}
             urlPrefix={itemUrlPrefix}
             themeColor={themeColor}

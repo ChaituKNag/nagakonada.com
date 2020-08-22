@@ -4,6 +4,7 @@ import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
 import Seo from "../components/common/Seo"
 import { colors } from "../styles/variables"
+import { mapItem } from "../utils/map-md-item"
 
 const AllTutorials = () => {
   const {
@@ -33,7 +34,7 @@ const AllTutorials = () => {
     <Layout>
       <Seo title="All tutorials" />
       <ItemsGridContainer
-        items={tutorials}
+        items={tutorials.map(mapItem)}
         itemUrlPrefix="/tutorial/"
         noItemsMessage="These are exciting times, please stick around!!"
         themeColor={colors.primary}

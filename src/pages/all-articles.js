@@ -3,6 +3,7 @@ import Layout from "../components/layouts/default"
 import ItemsGridContainer from "../components/items-grid/ItemsGridContainer"
 import { useStaticQuery, graphql } from "gatsby"
 import Seo from "../components/common/Seo"
+import { mapItem } from "../utils/map-md-item"
 
 const AllArticles = () => {
   const {
@@ -32,7 +33,7 @@ const AllArticles = () => {
     <Layout>
       <Seo title="All articles" />
       <ItemsGridContainer
-        items={articles}
+        items={articles.map(mapItem)}
         itemUrlPrefix="/article/"
         noItemsMessage="We are churning the articles, please do come back later!"
       />
