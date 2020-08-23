@@ -68,7 +68,7 @@ const SocialLink = styled(Anchor)`
 
 const Disclaimer = styled.p`
   font-family: ${fonts.special};
-  font-size: 0.7em;
+  font-size: 0.8em;
   line-height: 1.4;
 `
 
