@@ -15,7 +15,11 @@ const HeaderWrapper = styled.header`
     ${colors.light} 100%
   );
 
-  padding: 0 0.5rem;
+  padding: 0 0.5rem 1em;
+
+  @media ${mediaQueries.largeDesktopUp} {
+    padding: 0 0.5rem;
+  }
 `
 
 const HeaderRow = styled.div`
@@ -42,7 +46,7 @@ const TitleSection = styled.div`
 
 const BigHeaderTitle = styled(motion.h4)`
   margin: 0;
-  padding: 0;
+  padding: 0 0.5em;
   cursor: pointer;
   font-size: 1.8rem;
   color: ${colors.secondary};
@@ -119,62 +123,56 @@ const Header = () => {
   const home = location.pathname === "/"
   return (
     <HeaderWrapper>
-      <Container wide margin="0 auto">
-        <HeaderRow>
-          <TitleSection>
-            {home ? (
-              <BigHeaderTitle
-                layoutId="header-title"
-                tabIndex="0"
-                onClick={goto("/")}
-                onKeyPress={goto("/")}
-              >
-                Naga Konada
-              </BigHeaderTitle>
-            ) : (
-              <HeaderTitle
-                layoutId="header-title"
-                tabIndex="0"
-                onClick={goto("/")}
-                onKeyPress={goto("/")}
-              >
-                Naga Konada
-              </HeaderTitle>
-            )}
-
-            {!home ? (
-              <HeaderCaption layoutId="caption">
-                I make UI. I React!{" "}
-              </HeaderCaption>
-            ) : null}
-          </TitleSection>
-          <LinksSection>
-            <motion.nav
-              variants={navVariants}
-              initial="hidden"
-              animate="visible"
+      <HeaderRow>
+        <TitleSection>
+          {home ? (
+            <BigHeaderTitle
+              layoutId="header-title"
+              tabIndex="0"
+              onClick={goto("/")}
+              onKeyPress={goto("/")}
             >
-              <Row justify="space-between">
-                <HeaderLink variants={linkVariants} transition={linkTransition}>
-                  <Link activeClassName="active" to="/all-articles">
-                    Articles
-                  </Link>
-                </HeaderLink>
-                <HeaderLink variants={linkVariants} transition={linkTransition}>
-                  <Link activeClassName="active" to="/all-tutorials">
-                    Tutorials
-                  </Link>
-                </HeaderLink>
-                <HeaderLink variants={linkVariants} transition={linkTransition}>
-                  <Link activeClassName="active" to="/all-blogs">
-                    Blogs
-                  </Link>
-                </HeaderLink>
-              </Row>
-            </motion.nav>
-          </LinksSection>
-        </HeaderRow>
-      </Container>
+              Naga Konada
+            </BigHeaderTitle>
+          ) : (
+            <HeaderTitle
+              layoutId="header-title"
+              tabIndex="0"
+              onClick={goto("/")}
+              onKeyPress={goto("/")}
+            >
+              Naga Konada
+            </HeaderTitle>
+          )}
+
+          {!home ? (
+            <HeaderCaption layoutId="caption">
+              I make UI. I React!{" "}
+            </HeaderCaption>
+          ) : null}
+        </TitleSection>
+        <LinksSection>
+          <motion.nav variants={navVariants} initial="hidden" animate="visible">
+            <Row justify="space-between">
+              <HeaderLink variants={linkVariants} transition={linkTransition}>
+                <Link activeClassName="active" to="/all-articles">
+                  Articles
+                </Link>
+              </HeaderLink>
+              <HeaderLink variants={linkVariants} transition={linkTransition}>
+                <Link activeClassName="active" to="/all-tutorials">
+                  Tutorials
+                </Link>
+              </HeaderLink>
+              <HeaderLink variants={linkVariants} transition={linkTransition}>
+                <Link activeClassName="active" to="/all-blogs">
+                  Blogs
+                </Link>
+              </HeaderLink>
+            </Row>
+          </motion.nav>
+        </LinksSection>
+      </HeaderRow>
     </HeaderWrapper>
   )
 }
