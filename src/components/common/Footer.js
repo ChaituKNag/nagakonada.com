@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Container from "../styled/Container"
 import { fonts, colors } from "../../styles/variables"
 import Anchor from "./Anchor"
 import { motion } from "framer-motion"
