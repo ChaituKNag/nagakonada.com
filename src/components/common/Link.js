@@ -10,7 +10,7 @@ export default styled(Link)`
   &::after {
     content: "";
     position: absolute;
-    top: 110%;
+    top: 100%;
     left: 0;
     transform: scaleX(0);
     width: 100%;

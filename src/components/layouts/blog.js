@@ -8,7 +8,9 @@ import {
   ContentsContainer,
   ReadingContainer,
   ReadingTitle,
+  GoBackSection,
 } from "../styled/Contents"
+import Link from "../common/Link"
 
 const BlogLayout = props => {
   const { data } = props
@@ -24,6 +26,9 @@ const BlogLayout = props => {
       tocPresent={!!tocItems}
     >
       <Seo title={title} />
+      <GoBackSection>
+        <Link to="/all-blogs">← Go back</Link>
+      </GoBackSection>
       <ReadingTitle layoutId={`post-${slug}`}>{title}</ReadingTitle>
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <ReadingContainer>

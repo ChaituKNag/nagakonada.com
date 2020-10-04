@@ -33,6 +33,7 @@ const AllTutorials = () => {
   return (
     <Layout>
       <Seo title="All tutorials" />
+      <h1>All tutorials</h1>
       <ItemsGridContainer
         items={tutorials.map(mapItem)}
         itemUrlPrefix="/tutorial/"

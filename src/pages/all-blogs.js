@@ -30,6 +30,7 @@ const AllBlogs = () => {
   return (
     <Layout>
       <Seo title="All blogs" />
+      <h1>All blogs</h1>
       <ItemsGridContainer
         items={blogs.map(mapItem)}
         itemUrlPrefix="/blog/"
