@@ -50,6 +50,10 @@ blockquote p {
     margin: 0;
 }
 
+img {
+  width: 100%;
+}
+
 .gatsby-highlight pre[class*="language-"] {
     background-color: transparent;
     margin: 0;
