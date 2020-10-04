@@ -1,5 +1,5 @@
 export const fonts = {
-  heading: `'Satisfy', cursive`,
+  heading: `'Merriweather', cursive`,
   body: `"Ubuntu", sans-serif`,
   special: `'Do Hyeon', sans-serif`,
 }
@@ -7,7 +7,7 @@ export const fonts = {
 export const widths = {
   mobile: `500px`,
   desktop: `769px`,
-  largeDesktop: `850px`,
+  largeDesktop: `1150px`,
 }
 
 export const mediaQueries = {

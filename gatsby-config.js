@@ -136,6 +136,7 @@ module.exports = {
           { family: "Montserrat Alternates", variants: [`800i`] },
           { family: "Ubuntu", variants: [`300`, `400`, `700`] },
           { family: "Satisfy", variants: [`400`] },
+          { family: "Merriweather", variants: [`900`, `900i`] },
         ],
       },
     },
