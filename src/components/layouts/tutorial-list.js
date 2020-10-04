@@ -8,6 +8,12 @@ import { motion } from "framer-motion"
 import ItemsGridContainer from "../items-grid/ItemsGridContainer"
 import { mapItem } from "../../utils/map-md-item"
 import { colors } from "../../styles/variables"
+import {
+  ContentsContainer,
+  GoBackSection,
+  ReadingContainer,
+} from "../styled/Contents"
+import Link from "../common/Link"
 
 const TutorialLayout = ({ data }) => {
   const slug = data.mdx.slug
@@ -21,15 +27,7 @@ const TutorialLayout = ({ data }) => {
         animate="visible"
         exit="hidden"
         margin="2rem auto 0"
-      >
-        <Seo title={data.mdx.frontmatter.title} />
-        {data.mdx.frontmatter.title ? (
-          <motion.h1 layoutId={`post-${slug}`}>
-            {data.mdx.frontmatter.title}
-          </motion.h1>
-        ) : null}
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      </Container>
+      ></Container>
       <Container
         variants={fadeInVariants}
         initial="hidden"
@@ -38,13 +36,26 @@ const TutorialLayout = ({ data }) => {
         wide
         margin="0 auto"
       >
-        <ItemsGridContainer
-          items={tutorialEntries.map(mapItem)}
-          itemUrlPrefix={`/tutorial/`}
-          noItemsMessage="No tutorials yet. Keep looking!"
-          themeColor={colors.primary}
-          list
-        />
+        <Seo title={data.mdx.frontmatter.title} />
+        <GoBackSection>
+          <Link to="/all-tutorials">← Go back</Link>
+        </GoBackSection>
+        {data.mdx.frontmatter.title ? (
+          <motion.h1 layoutId={`post-${slug}`}>
+            {data.mdx.frontmatter.title}
+          </motion.h1>
+        ) : null}
+        <ReadingContainer>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+
+          <ItemsGridContainer
+            items={tutorialEntries.map(mapItem)}
+            itemUrlPrefix={`/tutorial/`}
+            noItemsMessage="No tutorials yet. Keep looking!"
+            themeColor={colors.primary}
+            list
+          />
+        </ReadingContainer>
       </Container>
     </Fragment>
   )

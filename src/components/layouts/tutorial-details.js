@@ -9,12 +9,15 @@ import {
   ContentsContainer,
   ReadingContainer,
   ReadingTitle,
+  GoBackSection,
 } from "../styled/Contents"
 import TableOfContents from "../toc/TableOfContents"
+import Link from "../common/Link"
 
-const TutorialLayout = ({ data }) => {
+const TutorialLayout = ({ data, context }) => {
   const slug = data.mdx.slug
   const tocItems = data.mdx.tableOfContents.items
+  const seriesId = data.mdx.frontmatter.tutorialParent
   console.log(data)
   return (
     <ContentsContainer
@@ -25,6 +28,9 @@ const TutorialLayout = ({ data }) => {
       tocPresent={!!tocItems}
     >
       <Seo title={data.mdx.frontmatter.title} />
+      <GoBackSection>
+        <Link to={`/tutorial/${seriesId}`}>← Go back</Link>
+      </GoBackSection>
       {data.mdx.frontmatter.title ? (
         <ReadingTitle layoutId={`post-${slug}`}>
           {data.mdx.frontmatter.title}
@@ -52,6 +58,7 @@ export const query = graphql`
         title
         date(fromNow: true)
         intro
+        tutorialParent
       }
       timeToRead
       tableOfContents

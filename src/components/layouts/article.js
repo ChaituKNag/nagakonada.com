@@ -6,9 +6,11 @@ import { fadeInVariants } from "../../styles/framer-utils"
 import TableOfContents from "../toc/TableOfContents"
 import {
   ContentsContainer,
+  GoBackSection,
   ReadingContainer,
   ReadingTitle,
 } from "../styled/Contents"
+import Link from "../common/Link"
 
 const ArticleLayout = props => {
   const { data } = props
@@ -24,6 +26,9 @@ const ArticleLayout = props => {
       tocPresent={!!tocItems}
     >
       <Seo title={title} />
+      <GoBackSection>
+        <Link to="/all-articles">← Go back</Link>
+      </GoBackSection>
       <ReadingTitle layoutId={`post-${slug}`}>{title}</ReadingTitle>
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <ReadingContainer>
