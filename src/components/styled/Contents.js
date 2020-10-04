@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { mediaQueries, widths } from "../../styles/variables"
-import Link from "../common/Link"
 
 export const ContentsContainer = styled(motion.div)`
   display: grid;
