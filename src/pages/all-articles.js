@@ -32,6 +32,7 @@ const AllArticles = () => {
   return (
     <Layout>
       <Seo title="All articles" />
+      <h1>All articles</h1>
       <ItemsGridContainer
         items={articles.map(mapItem)}
         itemUrlPrefix="/article/"
