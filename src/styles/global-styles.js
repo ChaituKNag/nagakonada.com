@@ -32,7 +32,7 @@ h4 { font-size: 1.75rem;}
 h5 { font-size: 1.5rem;}
 h6 { font-size: 1.4rem;}
 
-@media ${mediaQueries.desktopUp} {
+@media ${mediaQueries.largeDesktopUp} {
     html, body {
         font-size: 18px;
     }

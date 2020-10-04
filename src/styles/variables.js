@@ -1,7 +1,7 @@
 export const fonts = {
   heading: `'Merriweather', cursive`,
   body: `"Ubuntu", sans-serif`,
-  special: `'Do Hyeon', sans-serif`,
+  special: `'Montserrat Alternates', sans-serif`,
 }
 
 export const widths = {
@@ -18,8 +18,8 @@ export const mediaQueries = {
 
 export const colors = {
   base: "#333",
-  primary: "#3072c5",
-  secondary: "#d81b60",
+  primary: "#1d7692",
+  secondary: "#a90917",
   light: "#eee",
   white: "white",
   boxShadow: `rgba(0, 0, 0, 0.4)`,
