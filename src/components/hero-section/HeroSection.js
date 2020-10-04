@@ -36,6 +36,16 @@ const ImageWrapper = styled(Img)`
   }
 `
 
+const ImageLink = styled.a`
+  text-decoration: none;
+  &:focus::after,
+  &:active::after,
+  &:hover::after,
+  &.active::after {
+    transform: scaleX(0);
+  }
+`
+
 const HeroCaption = styled(motion.span)`
   font-family: ${fonts.special};
   font-size: 4.5rem;
@@ -68,9 +78,13 @@ const HeroSection = () => {
 
   return (
     <HeroWrapper>
-      <a href="https://thebestdeveloper.me" target="_blank" rel="noreferrer">
+      <ImageLink
+        href="https://thebestdeveloper.me"
+        target="_blank"
+        rel="noreferrer"
+      >
         <ImageWrapper fluid={image.fluid} alt="My profile pic" />
-      </a>
+      </ImageLink>
       <HeroCaption>I make UI. I React!</HeroCaption>
       <HeroContent>
         <p>
