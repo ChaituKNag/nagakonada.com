@@ -28,6 +28,7 @@ const TOCHeading = styled.h4`
 const TOCList = styled.ul`
   list-style-type: none;
   margin: 0;
+  padding: 0;
 `
 
 const TOCListItem = styled.li`

@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Anchor from "../common/Anchor"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
 import {
@@ -30,7 +32,13 @@ const TutorialLayout = ({ data }) => {
       ) : null}
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <ReadingContainer>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <MDXProvider
+          components={{
+            Anchor: Anchor,
+          }}
+        >
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        </MDXProvider>
       </ReadingContainer>
     </ContentsContainer>
   )

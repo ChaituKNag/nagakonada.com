@@ -8,6 +8,7 @@ export default styled(motion.a)`
   font-weight: 800;
   text-decoration: none;
   position: relative;
+  display: inline-block;
   &::after {
     content: "";
     position: absolute;
@@ -15,7 +16,7 @@ export default styled(motion.a)`
     left: 0;
     transform: scaleX(0);
     width: 100%;
-    height: 5px;
+    height: 3px;
     background-color: ${props => props.underlineColor || `currentColor`};
     transition: transform 200ms ease-in-out;
     transform-origin: right;

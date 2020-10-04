@@ -11,6 +11,8 @@ export const ContentsContainer = styled(motion.div)`
   padding: 0 0.5rem;
   position: relative;
   flex: 1;
+  margin-bottom: 5rem;
+
   @media ${mediaQueries.largeDesktopUp} {
     grid-template-columns: ${props =>
         props.tocPresent ? "minmax(250px, 1fr)" : "0px"} 3fr;
