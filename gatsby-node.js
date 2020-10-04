@@ -100,10 +100,52 @@ const createTutorialPages = async (graphql, createPage) => {
   return Promise.resolve()
 }
 
+const createTutorialContentPages = async (graphql, createPage) => {
+  const tutorialContentTemplate = path.resolve(
+    "src/components/layouts/tutorial-details.js"
+  )
+
+  const { data } = await graphql(`
+    query AllTutorialContent {
+      allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/.*content/tutorial-content/.*/" }
+        }
+      ) {
+        edges {
+          node {
+            id
+            slug
+            frontmatter {
+              tutorialParent
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (data.allMdx.edges.length > 0) {
+    data.allMdx.edges.forEach(({ node }) => {
+      createPage({
+        path: `/tutorial/${node.slug}`,
+        component: tutorialContentTemplate,
+        context: {
+          id: node.id,
+          tutorialParent: node.frontmatter
+            ? node.frontmatter.tutorialParent
+            : null,
+        },
+      })
+    })
+  }
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   await createArticlePages(graphql, createPage)
   await createTutorialPages(graphql, createPage)
   await createBlogPages(graphql, createPage)
+  await createTutorialContentPages(graphql, createPage)
 }
