@@ -144,11 +144,7 @@ const Header = () => {
             </HeaderTitle>
           )}
 
-          {!home ? (
-            <HeaderCaption layoutId="caption">
-              I make UI. I React!{" "}
-            </HeaderCaption>
-          ) : null}
+          {!home ? <HeaderCaption>I make UI. I React! </HeaderCaption> : null}
         </TitleSection>
         <LinksSection>
           <motion.nav variants={navVariants} initial="hidden" animate="visible">

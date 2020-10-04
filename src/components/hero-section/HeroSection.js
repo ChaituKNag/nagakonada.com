@@ -71,7 +71,7 @@ const HeroSection = () => {
       <a href="https://thebestdeveloper.me" target="_blank" rel="noreferrer">
         <ImageWrapper fluid={image.fluid} alt="My profile pic" />
       </a>
-      <HeroCaption layoutId="caption">I make UI. I React!</HeroCaption>
+      <HeroCaption>I make UI. I React!</HeroCaption>
       <HeroContent>
         <p>
           Check out all my{" "}
