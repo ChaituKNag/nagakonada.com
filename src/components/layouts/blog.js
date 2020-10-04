@@ -1,11 +1,14 @@
 import React from "react"
-import Container from "../styled/Container"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
 import TableOfContents from "../toc/TableOfContents"
-import { motion } from "framer-motion"
+import {
+  ContentsContainer,
+  ReadingContainer,
+  ReadingTitle,
+} from "../styled/Contents"
 
 const BlogLayout = props => {
   const { data } = props
@@ -13,18 +16,20 @@ const BlogLayout = props => {
   const tocItems = data.mdx.tableOfContents.items
   const slug = data.mdx.slug
   return (
-    <Container
-      margin="0 auto 2rem"
+    <ContentsContainer
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
       exit="hidden"
+      tocPresent={!!tocItems}
     >
       <Seo title={title} />
-      {title ? <motion.h1 layoutId={`post-${slug}`}>{title}</motion.h1> : null}
+      <ReadingTitle layoutId={`post-${slug}`}>{title}</ReadingTitle>
       {tocItems ? <TableOfContents links={tocItems} /> : null}
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
-    </Container>
+      <ReadingContainer>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </ReadingContainer>
+    </ContentsContainer>
   )
 }
 

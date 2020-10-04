@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 
 const Container = styled(motion.div)`
   margin: 10px;
-  max-width: ${props => (props.wide ? "100%" : "60ch")};
   padding: 0 0.5rem;
 
   width: calc(100% - 20px);

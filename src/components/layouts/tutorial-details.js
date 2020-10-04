@@ -1,29 +1,38 @@
 import React from "react"
-import Container from "../styled/Container"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
-import { motion } from "framer-motion"
+import {
+  ContentsContainer,
+  ReadingContainer,
+  ReadingTitle,
+} from "../styled/Contents"
+import TableOfContents from "../toc/TableOfContents"
 
 const TutorialLayout = ({ data }) => {
   const slug = data.mdx.slug
+  const tocItems = data.mdx.tableOfContents.items
   console.log(data)
   return (
-    <Container
+    <ContentsContainer
       variants={fadeInVariants}
       initial="hidden"
       animate="visible"
       exit="hidden"
+      tocPresent={!!tocItems}
     >
       <Seo title={data.mdx.frontmatter.title} />
       {data.mdx.frontmatter.title ? (
-        <motion.h1 layoutId={`post-${slug}`}>
+        <ReadingTitle layoutId={`post-${slug}`}>
           {data.mdx.frontmatter.title}
-        </motion.h1>
+        </ReadingTitle>
       ) : null}
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
-    </Container>
+      {tocItems ? <TableOfContents links={tocItems} /> : null}
+      <ReadingContainer>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </ReadingContainer>
+    </ContentsContainer>
   )
 }
 
@@ -35,7 +44,6 @@ export const query = graphql`
         title
         date(fromNow: true)
         intro
-        tutorialId
       }
       timeToRead
       tableOfContents
