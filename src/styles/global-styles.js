@@ -25,6 +25,12 @@ h1, h2, h3, h4, h5, h6 {
     color: ${colors.primary}
 }
 
+@media ${mediaQueries.largeDesktopUp} {
+    html, body {
+        font-size: 18px;
+    }
+}
+
 h1 { font-size: 3.3rem;}
 h2 { font-size: 2.5rem;}
 h3 { font-size: 2rem;}
@@ -32,11 +38,7 @@ h4 { font-size: 1.75rem;}
 h5 { font-size: 1.5rem;}
 h6 { font-size: 1.4rem;}
 
-@media ${mediaQueries.largeDesktopUp} {
-    html, body {
-        font-size: 18px;
-    }
-}
+
 
 blockquote {
     font-size: 1.3rem;

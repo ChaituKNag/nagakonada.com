@@ -16,7 +16,7 @@ const TOCWrapper = styled.div`
 
 const TOCFloatingContainer = styled.div`
   position: sticky;
-  top: 0;
+  top: 2rem;
 `
 
 const TOCHeading = styled.h4`

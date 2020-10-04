@@ -7,7 +7,7 @@ export const fonts = {
 export const widths = {
   mobile: `500px`,
   desktop: `769px`,
-  largeDesktop: `1150px`,
+  largeDesktop: `1050px`,
 }
 
 export const mediaQueries = {
