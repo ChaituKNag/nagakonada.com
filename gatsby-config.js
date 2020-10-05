@@ -119,6 +119,17 @@ module.exports = {
               tracedSVG: true,
             },
           },
+          {
+            resolve: `gatsby-remark-embedder`,
+            options: {
+              customTransformers: [
+                // Your custom transformers
+              ],
+              services: {
+                // The service-specific options by the name of the service
+              },
+            },
+          },
         ],
         tableOfContents: {
           heading: null,

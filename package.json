@@ -28,6 +28,7 @@
     "gatsby-plugin-sharp": "^2.6.24",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-remark-embed-video": "^3.0.10",
+    "gatsby-remark-embedder": "^3.0.0",
     "gatsby-remark-images": "^3.3.23",
     "gatsby-remark-prismjs": "^3.5.10",
     "gatsby-source-filesystem": "^2.3.23",
