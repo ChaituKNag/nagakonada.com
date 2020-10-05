@@ -19,8 +19,7 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
     font-family: ${fonts.heading};
     font-weight: 900;
-    margin: 0;
-    padding-top: .5em;
+    margin: 1em 0 .5em;
     line-height: 1.5;
     color: ${colors.primary}
 }
