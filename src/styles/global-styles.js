@@ -125,6 +125,11 @@ a {
     transform: scaleX(1);
     transform-origin: left;
   }
+
+  &.gatsby-resp-image-link:focus::after, &.gatsby-resp-image-link:active::after,
+  &.gatsby-resp-image-link:hover::after, &.gatsby-resp-image-link:active::after {
+    transform: scaleX(0);
+  }
 }
 
 `

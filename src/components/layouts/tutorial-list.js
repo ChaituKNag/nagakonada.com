@@ -8,11 +8,7 @@ import { motion } from "framer-motion"
 import ItemsGridContainer from "../items-grid/ItemsGridContainer"
 import { mapItem } from "../../utils/map-md-item"
 import { colors } from "../../styles/variables"
-import {
-  ContentsContainer,
-  GoBackSection,
-  ReadingContainer,
-} from "../styled/Contents"
+import { GoBackSection, ReadingContainer } from "../styled/Contents"
 import Link from "../common/Link"
 
 const TutorialLayout = ({ data }) => {
