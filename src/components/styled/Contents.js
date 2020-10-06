@@ -9,7 +9,7 @@ export const ContentsContainer = styled(motion.div)`
     "title"
     "toc"
     "reading";
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
 
   margin: 10px;
   padding: 0 0.5rem;

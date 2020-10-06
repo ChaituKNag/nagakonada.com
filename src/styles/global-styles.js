@@ -16,18 +16,21 @@ html, body {
     color: ${colors.base}
 }
 
+
+@media ${mediaQueries.desktopUp} {
+    html, body {
+        font-size: 16px;
+    }
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: ${fonts.heading};
     font-weight: 900;
     margin: 1em 0 .5em;
     line-height: 1.5;
-    color: ${colors.primary}
-}
-
-@media ${mediaQueries.largeDesktopUp} {
-    html, body {
-        font-size: 18px;
-    }
+    color: ${colors.primary};
+    word-break: break-word;
 }
 
 h1 { font-size: 3.3rem;}
