@@ -19,7 +19,7 @@ const ImageWrapper = styled(Img)`
   backface-visibility: visible;
   transform: perspective(200px) rotateY(5deg);
   margin: 0 2rem;
-  border: 2px solid ${colors.secondary};
+  border: 2px solid ${colors.primary};
   border-radius: 5px;
   box-shadow: -5px 0 10px ${colors.boxShadow};
   transition: transform 200ms ease-out;
@@ -48,16 +48,15 @@ const ImageLink = styled.a`
 
 const HeroCaption = styled(motion.span)`
   font-family: ${fonts.special};
-  font-size: 4.5rem;
-  line-height: 0.9;
+  font-size: 3rem;
+  line-height: 1.1;
   letter-spacing: -3px;
   text-align: center;
-  margin: 0.5em 0;
+  margin: 0.5em 0 0;
   z-index: 1;
 
   @media ${mediaQueries.desktopUp} {
-    font-size: 5.5rem;
-    line-height: 0.8;
+    font-size: 4.5rem;
   }
 `
 

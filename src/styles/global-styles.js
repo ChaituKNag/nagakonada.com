@@ -19,7 +19,7 @@ html, body {
 
 @media ${mediaQueries.desktopUp} {
     html, body {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
@@ -33,17 +33,17 @@ h1, h2, h3, h4, h5, h6 {
     word-break: break-word;
 }
 
-h1 { font-size: 3.3rem;}
-h2 { font-size: 2.5rem;}
-h3 { font-size: 2rem;}
-h4 { font-size: 1.75rem;}
-h5 { font-size: 1.5rem;}
-h6 { font-size: 1.4rem;}
+h1 { font-size: 2rem;}
+h2 { font-size: 1.5rem;}
+h3 { font-size: 1.3rem;}
+h4 { font-size: 1.2rem;}
+h5 { font-size: 1.1rem;}
+h6 { font-size: 1rem;}
 
 
 
 blockquote {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-family: ${fonts.special};
     border-left: 5px solid ${colors.secondary};
     margin: 0;

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Row from "../styled/Row"
-import { fonts, colors, mediaQueries } from "../../styles/variables"
+import { fonts, colors, mediaQueries, widths } from "../../styles/variables"
 import Link from "./Link"
 import goto from "../../utils/goto-page"
 import { useLocation } from "@reach/router"
@@ -15,7 +15,6 @@ const HeaderWrapper = styled.header`
   );
 
   padding: 0 0.5rem 1em;
-
   @media ${mediaQueries.largeDesktopUp} {
     padding: 0 0.5rem;
   }
@@ -26,6 +25,8 @@ const HeaderRow = styled.div`
   justify-content: stretch;
   align-items: center;
   flex-direction: column;
+  max-width: ${widths.largeDesktop};
+  margin: 0 auto;
   @media ${mediaQueries.largeDesktopUp} {
     flex-direction: row;
   }

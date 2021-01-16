@@ -34,12 +34,14 @@ export const ContentsContainer = styled(motion.div)`
 export const ReadingTitle = styled(motion.h1)`
   grid-area: title;
   margin-top: 0;
+  max-width: ${widths.desktop};
 `
 
 export const ReadingContainer = styled.main`
   grid-area: reading;
   width: 100%;
-  max-width: 60ch;
+  /* max-width: 60ch; */
+  max-width: ${widths.desktop};
 `
 
 export const GoBackSection = styled.div`
