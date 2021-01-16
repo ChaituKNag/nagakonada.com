@@ -134,6 +134,12 @@ a {
   }
 }
 
+table {
+  border: 1px solid ${colors.secondary};
+  overflow: scroll;
+  width: 100%;
+}
+
 `
 
 export default GlobalStyles

@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Seo from "../common/Seo"
 import { fadeInVariants } from "../../styles/framer-utils"
@@ -11,6 +12,7 @@ import {
   ReadingTitle,
 } from "../styled/Contents"
 import Link from "../common/Link"
+import Table from "../styled/Table"
 
 const ArticleLayout = props => {
   const { data } = props
@@ -32,7 +34,13 @@ const ArticleLayout = props => {
       <ReadingTitle layoutId={`post-${slug}`}>{title}</ReadingTitle>
       {tocItems ? <TableOfContents links={tocItems} /> : null}
       <ReadingContainer>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <MDXProvider
+          components={{
+            Table,
+          }}
+        >
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        </MDXProvider>
       </ReadingContainer>
     </ContentsContainer>
   )
