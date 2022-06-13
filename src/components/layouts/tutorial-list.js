@@ -1,59 +1,38 @@
-import React, { Fragment } from "react"
-import Container from "../styled/Container"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Seo from "../common/Seo"
-import { fadeInVariants } from "../../styles/framer-utils"
-import { motion } from "framer-motion"
-import ItemsGridContainer from "../items-grid/ItemsGridContainer"
-import { mapItem } from "../../utils/map-md-item"
+import React from "react"
 import { colors } from "../../styles/variables"
-import { GoBackSection, ReadingContainer } from "../styled/Contents"
+import { mapItem } from "../../utils/map-md-item"
 import Link from "../common/Link"
+import Seo from "../common/Seo"
+import ItemsGridContainer from "../items-grid/ItemsGridContainer"
 
 const TutorialLayout = ({ data }) => {
-  const slug = data.mdx.slug
   const tutorialEntries = data.allMdx.edges
   console.log(data.mdx.frontmatter.title)
   return (
-    <Fragment>
-      <Container
-        variants={fadeInVariants}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-        margin="2rem auto 0"
-      ></Container>
-      <Container
-        variants={fadeInVariants}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-        wide
-        margin="0 auto"
-      >
-        <Seo title={data.mdx.frontmatter.title} />
-        <GoBackSection>
-          <Link to="/all-tutorials">← Go back</Link>
-        </GoBackSection>
-        {data.mdx.frontmatter.title ? (
-          <motion.h1 layoutId={`post-${slug}`}>
-            {data.mdx.frontmatter.title}
-          </motion.h1>
-        ) : null}
-        <ReadingContainer>
-          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+    <>
+      <Seo title={data.mdx.frontmatter.title} />
+      <div className="go-back">
+        <Link to="/all-tutorials">← Go back</Link>
+      </div>
+      {data.mdx.frontmatter.title ? (
+        <h1>
+          {data.mdx.frontmatter.title}
+        </h1>
+      ) : null}
+      <div className="list-container">
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
 
-          <ItemsGridContainer
-            items={tutorialEntries.map(mapItem)}
-            itemUrlPrefix={`/tutorial/`}
-            noItemsMessage="No tutorials yet. Keep looking!"
-            themeColor={colors.primary}
-            list
-          />
-        </ReadingContainer>
-      </Container>
-    </Fragment>
+        <ItemsGridContainer
+          items={tutorialEntries.map(mapItem)}
+          itemUrlPrefix={`/tutorial/`}
+          noItemsMessage="No tutorials yet. Keep looking!"
+          themeColor={colors.primary}
+          list
+        />
+      </div>
+    </>
   )
 }
 

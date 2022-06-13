@@ -1,13 +1,17 @@
-require("prismjs/themes/prism-okaidia.css")
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
-const React = require("react")
-const ThemeWrapper = require("./src/styles/theme").ThemeWrapper
-const Header = require("./src/components/common/Header").default
-const Footer = require("./src/components/common/Footer").default
-const AnimateSharedLayout = require("framer-motion").AnimateSharedLayout
-const AnimatePresence = require("framer-motion").AnimatePresence
+import './src/styles/global.css';
 
-exports.wrapPageElement = ({ element }) => {
+import "prismjs/themes/prism-okaidia.css";
+
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+import React from 'react'
+import { ThemeWrapper } from './src/styles/theme';
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import Header from './src/components/common/Header';
+import Footer from './src/components/common/Footer';
+
+
+export const wrapPageElement = ({ element }) => {
   return (
     <ThemeWrapper>
       <AnimateSharedLayout type="crossfade">

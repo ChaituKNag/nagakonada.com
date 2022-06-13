@@ -1,18 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
+import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import React from "react"
 import Anchor from "../common/Anchor"
-import Seo from "../common/Seo"
-import { fadeInVariants } from "../../styles/framer-utils"
-import {
-  ContentsContainer,
-  ReadingContainer,
-  ReadingTitle,
-  GoBackSection,
-} from "../styled/Contents"
-import TableOfContents from "../toc/TableOfContents"
 import Link from "../common/Link"
+import Seo from "../common/Seo"
+import TableOfContents from "../toc/TableOfContents"
 
 const TutorialLayout = ({ data, context }) => {
   const slug = data.mdx.slug
@@ -20,24 +13,18 @@ const TutorialLayout = ({ data, context }) => {
   const seriesId = data.mdx.frontmatter.tutorialParent
   console.log(data)
   return (
-    <ContentsContainer
-      variants={fadeInVariants}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      tocPresent={!!tocItems}
-    >
+    <>
       <Seo title={data.mdx.frontmatter.title} />
-      <GoBackSection>
+      <div className="go-back">
         <Link to={`/tutorial/${seriesId}`}>← Go back</Link>
-      </GoBackSection>
+      </div>
       {data.mdx.frontmatter.title ? (
-        <ReadingTitle layoutId={`post-${slug}`}>
+        <h1 layoutId={`post-${slug}`}>
           {data.mdx.frontmatter.title}
-        </ReadingTitle>
+        </h1>
       ) : null}
       {tocItems ? <TableOfContents links={tocItems} /> : null}
-      <ReadingContainer>
+      <div className="details-section">
         <MDXProvider
           components={{
             Anchor: Anchor,
@@ -45,8 +32,8 @@ const TutorialLayout = ({ data, context }) => {
         >
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </MDXProvider>
-      </ReadingContainer>
-    </ContentsContainer>
+      </div>
+    </>
   )
 }
 

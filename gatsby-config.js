@@ -126,6 +126,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-postcss',
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-fonts`,

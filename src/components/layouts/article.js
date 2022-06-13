@@ -1,40 +1,27 @@
-import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Seo from "../common/Seo"
-import { fadeInVariants } from "../../styles/framer-utils"
-import TableOfContents from "../toc/TableOfContents"
-import {
-  ContentsContainer,
-  GoBackSection,
-  ReadingContainer,
-  ReadingTitle,
-} from "../styled/Contents"
+import React from "react"
 import Link from "../common/Link"
+import Seo from "../common/Seo"
+import TableOfContents from "../toc/TableOfContents"
 
 const ArticleLayout = props => {
   const { data } = props
   const title = data.mdx.frontmatter.title
   const tocItems = data.mdx.tableOfContents.items
-  const slug = data.mdx.slug
+
   return (
-    <ContentsContainer
-      variants={fadeInVariants}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      tocPresent={!!tocItems}
-    >
+    <>
       <Seo title={title} />
-      <GoBackSection>
+      <div className="go-back">
         <Link to="/all-articles">← Go back</Link>
-      </GoBackSection>
-      <ReadingTitle layoutId={`post-${slug}`}>{title}</ReadingTitle>
+      </div>
+      <h1>{title}</h1>
       {tocItems ? <TableOfContents links={tocItems} /> : null}
-      <ReadingContainer>
+      <div className="article-container">
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      </ReadingContainer>
-    </ContentsContainer>
+      </div>
+    </>
   )
 }
 

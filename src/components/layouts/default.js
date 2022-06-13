@@ -1,18 +1,13 @@
 import React from "react"
-import Container from "../styled/Container"
-import { fadeInVariants } from "../../styles/framer-utils"
 
 const Layout = ({ children }) => {
   return (
-    <Container
-      wide
-      variants={fadeInVariants}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-    >
+    <div>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
       {children}
-    </Container>
+    </div>
   )
 }
 
