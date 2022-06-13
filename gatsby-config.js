@@ -128,18 +128,19 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          { family: "Fira Sans", variants: [`400`, `800`] },
-          { family: "Do Hyeon", variants: [`400`] },
-          { family: "Montserrat Alternates", variants: [`800i`] },
-          { family: "Ubuntu", variants: [`300`, `400`, `700`] },
-          { family: "Satisfy", variants: [`400`] },
-          { family: "Bangers", variants: [`400`] },
-          { family: "Merriweather", variants: [`900`, `900i`] },
+          `Fira Sans\:400,800`,
+          `Do Hyeon\:400`,
+          `Montserrat Alternates\:800i`,
+          `Ubuntu\:300,400,700`,
+          `Satisfy\:400`,
+          `Bangers\:400`,
+          `Merriweather\:900,900i`,
         ],
-      },
+        display: 'swap'
+      }
     },
   ],
 }
