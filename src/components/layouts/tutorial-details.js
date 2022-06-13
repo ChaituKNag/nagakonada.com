@@ -1,9 +1,8 @@
 import { MDXProvider } from "@mdx-js/react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import Anchor from "../common/Anchor"
-import Link from "../common/Link"
 import Seo from "../common/Seo"
 import TableOfContents from "../toc/TableOfContents"
 

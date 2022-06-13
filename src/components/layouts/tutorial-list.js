@@ -1,9 +1,8 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import { colors } from "../../styles/variables"
 import { mapItem } from "../../utils/map-md-item"
-import Link from "../common/Link"
 import Seo from "../common/Seo"
 import ItemsGridContainer from "../items-grid/ItemsGridContainer"
 

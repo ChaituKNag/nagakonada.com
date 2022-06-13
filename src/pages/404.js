@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layouts/default"
 import Seo from "../components/common/Seo.js"
-import Link from "../components/common/Link"
+import { Link } from "gatsby"
 
 export default () => {
   return (
