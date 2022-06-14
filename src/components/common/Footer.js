@@ -2,13 +2,7 @@ import React from "react"
 
 const Footer = () => {
   return (
-    <footer>
-      <div>
-        Checkout my portfolio site{" "}
-        <span role="img" aria-label="portfolio suitcase icon">
-          💼
-        </span>
-      </div>
+    <footer className="bg-slate-200">
       <a
         href="https://thebestdeveloper.me"
         target="_blank"
@@ -16,12 +10,9 @@ const Footer = () => {
       >
         The Best Developer
       </a>
-      <div>
-        My social media links{" "}
-        <span role="img" aria-label="social post icon">
-          ✍️
-        </span>
-      </div>
+      <h4>
+        My social media links
+      </h4>
       <div
       >
         <a

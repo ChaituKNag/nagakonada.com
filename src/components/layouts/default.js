@@ -1,12 +1,13 @@
 import React from "react"
+import Footer from "../common/Footer"
+import Header from "../common/Header"
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <div className="mx-auto w-full max-w-7xl px-2 xxl:px-0">
+      <Header />
       {children}
+      <Footer />
     </div>
   )
 }
