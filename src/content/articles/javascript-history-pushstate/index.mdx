@@ -38,11 +38,19 @@ We have an event called popstate, that occurs when user goes back to a history e
 
 You can listen to this event by adding an event listener on the window:
 
-![adding an event listener to the window object listening to ‘popstate’ event.](./popstate-listener.png)
+```javascript
+window.addEventListener("popstate", function (popstateEvent) {
+  console.log(popstateEvent.state)
+})
+```
 
 or using the window.onpopstate property:
 
-![assigning a listener function to window.onpopstate property.](./onpopstate.png)
+```javascript
+window.onpopstate = function (popstateEvent) {
+  console.log(popstateEvent.state)
+}
+```
 
 > Note that pushState() never causes a hashchange event to be fired, even if the new URL differs from the old URL only in its hash.
 
@@ -95,7 +103,20 @@ This is where all our client side magic happens. We are having a listener bound 
 
 Each tab is having a `data-tab-for` attribute that holds the ID of the associated paragraph.
 
-![The tabClicked function](./tab-clicked-function.png)
+```javascript
+function tabClicked(e) {
+  var contentId = e.target.dataset.tabFor
+  e.preventDefault()
+  showContent(contentId)
+  history.pushState(
+    {
+      tabForId: contentId,
+    },
+    null,
+    "tab-" + contentId
+  )
+}
+```
 
 When the tab is clicked, we are getting the `contentId` and adding a manual entry into the history using `history.pushState()`. Notice, as a first argument, we are passing an object that has `tabForId` same as the `contentId` of the clicked tab. This object is called the **state**. Saving this enables us to retrieve it when the user navigates back to this entry of the history.
 
@@ -107,9 +128,30 @@ When the popstate event happens on the window, we are calling a function called 
 
 Then we will simply show that paragraph and hide the remaining paragraphs.
 
-![This fires whenever the popstate event occurs on the window DOM element.](./check-state-func.png)
+```javascript
+function checkState(e) {
+  // page reload
+  if (e.state) {
+    console.log(e.state.tabForId)
+    showContent(e.state.tabForId)
+  }
+}
+```
 
-![This takes care of showing only the associated paragraph and also highlighting the corresponding tab.](./show-content.png)
+This takes care of showing only the associated paragraph and also highlighting the corresponding tab:
+
+```javascript
+function showContent(id) {
+  contents.forEach(content => {
+    if (content.getAttribute("id") === id) content.classList.remove("hide")
+    else content.classList.add("hide")
+  })
+  tabs.forEach(tab => {
+    if (tab.dataset.tabFor === id) tab.classList.add("active")
+    else tab.classList.remove("active")
+  })
+}
+```
 
 To listen to the popstate event, we simply have to do this:
 
@@ -123,7 +165,15 @@ To prevent any issues, we can check the state on page load and replace the empty
 
 This piece of code takes care of it:
 
-![Replaces the empty reload state to a new state with our desired content](./replace-state-func.png)
+```javascript
+history.replaceState(
+  {
+    tabForId: tabs[0].dataset.tabFor,
+  },
+  null,
+  "tab-" + tabs[0].dataset.tabFor
+)
+```
 
 And here is the complete code of the client side app.js file:
 
